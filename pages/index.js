@@ -1,5 +1,5 @@
 import React from 'react'
-import { Product, Footer, Start } from '../components'
+import { Product, Footer, Start, Benefits } from '../components'
 import { client } from '../lib/client'
 import Link from 'next/link'
 
@@ -14,6 +14,7 @@ const Home = ({ products}) => {
     <>
     <div className='home-container'>
       <Start />
+      <Benefits />
     </div>
     </>
   )
