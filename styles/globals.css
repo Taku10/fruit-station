@@ -1,26 +1,122 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
 
 * {
-  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+:root {
+  ---open: "Open Sans", sans-serif;
+  ---poppins: Poppins, sans-serif;
+  ---main_color: #f28123;
+  ---sec_color: #051922
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+.layout {
+  width: 100%;
+  height: 1000rem;
+}
+
+header {
+  position: fixed;
+  
+}
+
+main {
+  height: 500rem;
+  width: 100%;
+ 
+}
+
+.navbar-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 2rem;
+  align-items: center;
+  padding: 3rem 0rem;
+  position: fixed;
+  margin-top:2rem;
+  transition: .1s ease;
+}
+
+
+.navbar-container.active {
+  background-color: var(---sec_color);
+  position: fixed;
+  margin-top:0rem;
+}
+
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(---main_color);
+  font-family: var(---open);
+  
+}
+
+
+.logo-icon {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.logo-text{
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.nav-items li {
+  list-style: none;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: var(---open);
+  font-weight: 700;
+  transition: .4s ease-in-out;
+  color: #ffffff
+}
+
+.nav-items li a:hover {
+  color: var(---main_color)
+}
+
+
+
+.cart-search-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 5%;
+  font-size: 18px;
+  font-weight: 900;
+
+}
+
+.cart-nav,
+.search-nav {
+  transition: .4s ease-in-out;
+  cursor: pointer;
+  color: #ffffff
+}
+
+.cart-nav:hover,
+.search-nav:hover {
+  color: var(---main_color)
 }

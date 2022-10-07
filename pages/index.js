@@ -1,19 +1,21 @@
 import React from 'react'
-import { Product, Footer } from '../components'
+import { Product, Footer, Start } from '../components'
 import { client } from '../lib/client'
 import Link from 'next/link'
 
-const Home = ({ products }) => {
+
+
+const Home = ({ products}) => {
 
 
   console.log(products[0].name)
 
   return (
-    <div className='home-contianer'>
-      <Link href=''>
-        <h1>{products[0].name}</h1>
-      </Link>
+    <>
+    <div className='home-container'>
+      <Start />
     </div>
+    </>
   )
 }
 
