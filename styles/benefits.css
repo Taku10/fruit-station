@@ -1,0 +1,58 @@
+:root {
+    ---open: "Open Sans", sans-serif;
+    ---poppins: Poppins, sans-serif;
+    ---main_color: #f28123;
+    ---sec_color: #051922
+  }
+
+  .benefits-container{
+    width: 100%;
+    height: 15rem;
+    background-color: #f5f5f5;
+    padding: 0rem 8rem;
+  }
+
+  .benefits-wrapper{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+   
+  }
+
+  .ben-extras{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    
+  }
+
+  .benefit-icon{
+    border: 3px dotted var(---main_color);
+    border-radius: 4rem;
+    padding: 1rem 1rem;
+  }
+
+  .benefit-icon .icon{
+    font-size:40px;
+    color: var(---main_color);
+  }
+
+  .benefit-type{
+    margin-top:.8rem
+  }
+
+  .benefit-type h1{
+    font-size:20px;
+    font-family: var(---poppins);
+    font-weight: 700;
+    color: var(---sec_color);
+  }
+
+  .benefit-type p{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(---sec_color);
+    font-family: var(---open);
+
+  }

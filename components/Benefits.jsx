@@ -7,8 +7,8 @@ const Benefits = () => {
     <div className='benefits-container'>
         <div className='benefits-wrapper'>
             <div className='ben-extras'>
-                <div className='icon'>
-                    <TbTruckDelivery />
+                <div className='benefit-icon'>
+                    <TbTruckDelivery className='icon' />
                 </div>
                 <div className='benefit-type'>
                     <h1>Free Shipping</h1>
@@ -16,8 +16,8 @@ const Benefits = () => {
                 </div>
             </div>
             <div className='ben-extras'>
-                <div className='icon'>
-                    <BiPhoneCall />
+                <div className='benefit-icon'>
+                    <BiPhoneCall className='icon' />
                 </div>
                 <div className='benefit-type'>
                     <h1>24/7 Support</h1>
@@ -25,8 +25,8 @@ const Benefits = () => {
                 </div>
             </div>
             <div className='ben-extras'>
-                <div className='icon'>
-                    <TiArrowSync />
+                <div className='benefit-icon'>
+                    <TiArrowSync className='icon' />
                 </div>
                 <div className='benefit-type'>
                     <h1>Refund</h1>
