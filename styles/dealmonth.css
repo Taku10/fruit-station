@@ -1,0 +1,128 @@
+:root {
+    ---open: "Open Sans", sans-serif;
+    ---poppins: Poppins, sans-serif;
+    ---main_color: #f28123;
+    ---sec_color: #051922
+  }
+
+  .deal-month-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 40rem;
+    background-color:#f5f5f5;
+    padding: 4rem 0rem;
+  }
+
+  .deal-month-wrapper{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 70%;
+    height: 100%;
+
+ 
+  }
+
+  .deal-image{
+    background-image: url('../images/orange-splash.png');
+    background-repeat: no-repeat;
+    background-size: fit;
+    height: 100%;
+    width: 100%;
+    margin-top:-4rem;
+  }
+
+  .disc-circle{
+    background-color: var(---main_color);
+    width: 7rem;
+    height: 7rem;
+    padding: .3rem .5rem;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #f29e57;
+    position: absolute;
+    margin-top:2rem;
+  }
+
+  .disc{
+    font-family: var(---open);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(---sec_color);
+  }
+
+  .off-per-kg{
+    font-family: var(---open);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(---sec_color);
+    margin-top:-1rem;
+  }
+
+  .deal-desc{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+  }
+
+  .deal-header h1{
+    font-family: var(---poppins);
+    font-size: 40px;
+    color: var(---sec_color);
+    font-weight: 700;
+  }
+
+  .deal-header span {
+    color: var(---main_color)
+  }
+
+  .deal-header p{
+    font-family: var(---poppins);
+    font-weight: 300;
+    font-size: 21px;
+    color: var(---sec_color);
+  }
+
+  .deal-text{
+    font-family: var(---open);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(---sec_color);
+  }
+
+  .timer{
+    display: flex;
+    width: 100%;
+    justify-items: center;
+    gap:.4rem;
+    
+   
+  }
+
+  .number{
+    color: var(---main_color);
+    font-family: var(---poppins);
+    font-size: 30px;
+    font-weight: 700;
+    
+  }
+
+  .time-type{
+    font-weight: 400;
+    font-size: 13px;
+    font-family: var(---open);
+    color: var(---sec_color);
+  }
+
+  .days, .hours, .mins, .secs{
+    border: 3px solid var(---main_color);
+    width: 6rem;
+    padding: .5rem 0rem;
+    display: flex;
+    flex-direction: column;
+   align-items: center; 
+  }
