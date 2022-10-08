@@ -10,16 +10,16 @@ const Navbar = ({ logo }) => {
   const [nav, setNav] = useState(false)
 
   //navbar color change on scroll
-  // const changeNav = () => {
-  //   console.log(window.scrollY)
-  //   if (window.scrollY >= 1) {
-  //     setNav(true)
-  //   } else {
-  //     setNav(false)
-  //   }
-  // }
+  const changeNav = () => {
+    console.log(window.scrollY)
+    if (window.scrollY >= 1) {
+      setNav(true)
+    } else {
+      setNav(false)
+    }
+  }
 
-  // window.addEventListener('scroll', changeNav);
+  window.addEventListener('scroll', changeNav);
 
   return (
     <nav className={`${ nav ? 'navbar-container active': 'navbar-container'}`}>
