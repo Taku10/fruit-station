@@ -8,7 +8,7 @@ import Link from 'next/link'
 const Home = ({ products}) => {
 
 
-  console.log(products[0].name)
+  console.log(products)
 
   return (
     <>

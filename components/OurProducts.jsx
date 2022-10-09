@@ -1,8 +1,8 @@
 import React from 'react'
-import {BsFillCartFill} from 'react-icons/bs'
+import { BsFillCartFill } from 'react-icons/bs'
 import { urlFor } from '../lib/client'
 
-const OurProducts = ({products}) => {
+const OurProducts = ({ products }) => {
 
     console.log(products[0].image)
     return (
@@ -19,7 +19,9 @@ const OurProducts = ({products}) => {
                 </div>
                 <div className='home-products-wrapper'>
                     <div className='fruit-wrapper'>
-                        <img src={urlFor(products[0].image[0])} alt="" />
+                        <div className='fruit-image'>
+                            <img src={urlFor(products[0].image[0])} alt="" />
+                        </div>
                         <div className='fruit-info'>
                             <h2>{products[0].name}</h2>
                             <div className='price-kg'>
@@ -33,7 +35,9 @@ const OurProducts = ({products}) => {
                         </div>
                     </div>
                     <div className='fruit-wrapper'>
-                        <img src={urlFor(products[1].image[0])} alt="" />
+                        <div className='fruit-image'>
+                            <img src={urlFor(products[1].image[0])} alt="" />
+                        </div>
                         <div className='fruit-info'>
                             <h2>{products[1].name}</h2>
                             <div className='price-kg'>
@@ -47,7 +51,9 @@ const OurProducts = ({products}) => {
                         </div>
                     </div>
                     <div className='fruit-wrapper'>
-                        <img src={urlFor(products[2].image[0])} alt="" />
+                        <div className='fruit-image'>
+                            <img src={urlFor(products[2].image[0])} alt="" />
+                        </div>
                         <div className='fruit-info'>
                             <h2>{products[2].name}</h2>
                             <div className='price-kg'>

@@ -4,6 +4,7 @@ import '../styles/home.css'
 import '../styles/benefits.css'
 import '../styles/ourproducts.css'
 import '../styles/dealmonth.css'
+import '../styles/shop.css'
 import React from 'react'
 import {Layout}  from '../components'
 

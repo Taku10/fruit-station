@@ -87,9 +87,17 @@
     box-shadow: none;
 }
 
+.fruit-image{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+
+}
+
 .fruit-wrapper img{
-    width: 22rem;
-    height: 22rem;
+    width: 20rem;
+    height: 18rem;
     cursor: pointer;
 }
 
@@ -97,7 +105,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:2rem
+    text-align: center;
+    gap:2rem;
+    margin-top:2rem;
 }
 
 .fruit-info h2{

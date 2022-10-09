@@ -7,3 +7,6 @@ export {default as Start} from './Start'
 export {default as Benefits} from './Benefits'
 export {default as OurProducts} from './OurProducts'
 export {default as DealMonth} from './DealMonth'
+export {default as ShopStart} from './ShopStart'
+export {default as ListProducts} from './ListProducts'
+
