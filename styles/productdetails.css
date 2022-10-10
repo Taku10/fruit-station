@@ -4,118 +4,208 @@
     ---main_color: #f28123;
     ---sec_color: #051922;
     ---head_color: #374b56;
-  }
-
-
-
-.product-details-container{
-    width: 100%;
-    height: 100%;
 }
 
-.product-start-container{
+
+
+.product-details-container {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.product-start-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 57vh;
-    border: 1px solid;
-    background-color:var(---head_color);
+    background-color: var(---head_color);
     background-attachment: fixed;
     align-items: center;
     justify-content: center
-  }
+}
 
 
-  .product-start-header{
+.product-start-header {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
-    gap:2rem;
+    gap: 2rem;
     margin-top: 4rem;
-  }
+}
 
-  .product-start-header p{
+.product-start-header p {
     font-family: var(---open);
     font-weight: 700;
-    font-size:14px;
+    font-size: 14px;
     color: var(---main_color);
     letter-spacing: .5rem;
-  }
+}
 
-  .product-start-header h1{
+.product-start-header h1 {
     font-family: var(---poppins);
     font-weight: 900;
-    font-size:50px;
+    font-size: 50px;
     color: #ffffff;
 
-  }
+}
 
-  .details-container{
-    border: 1px solid;
-    height: 60rem;
+.details-container {
+    height: 50rem;
     display: flex;
-    padding-top:10rem;
+    padding-top: 10rem;
     justify-content: center;
-  }
+}
 
-  .details-wrapper{
+.details-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
     width: 80%;
-  }
+    justify-content: center;
+}
 
-  .product-image{
+.product-image {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 27rem;
     width: 35rem;
-    box-shadow: 1px 2px 10px -3px ;
-  }
+    box-shadow: 1px 2px 10px -3px;
+}
 
-  .product-image img{
+.product-image img {
     width: 25rem;
-  }
+}
 
-  .product-name {
+.product-name {
     font-size: 22px;
     font-family: var(---poppins);
     font-weight: 600;
     color: var(---sec_color);
-  }
+}
 
-  .product-info{
-    border: 1px solid;
+.product-info {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  
-  .product-info .kg{
+    height: 35rem;
+}
+
+.product-info .kg {
     font-family: var(---open);
     font-weight: 400;
-    font-size:18px;
-    color:var(---sec_color);
-  }
+    font-size: 18px;
+    color: var(---sec_color);
+}
 
-  .product-price{
+.product-price {
     font-size: 32px;
     font-family: var(---open);
     font-weight: 700;
     color: var(---sec_color);
-  }
+}
 
-  .product-desc{
+.product-desc {
     font-family: var(---open);
     font-weight: 400;
-    font-size:15px;
-    color:#555555;
-  }
+    font-size: 15px;
+    color: #555555;
+}
 
-  .product-form .input-qty{
+.product-form .input-qty {
     width: 6rem;
     height: 2.5rem;
     border: 1px solid #e2e0e0;
     border-radius: .4rem;
+}
+
+.product-category {
+    font-size: 15px;
+    font-family: var(---open);
+    font-weight: 700;
+    color: #555555;
+}
+
+.product-category span {
+    font-size: 15px;
+    font-family: var(---open);
+    font-weight: 400;
+    color: #555555;
+}
+
+.share{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+.share h1 {
+    font-size: 20px;
+    font-family: var(---poppins);
+    font-weight: 600;
+    color: var(---sec_color);
+}
+
+.social-icons {
+    color: var(---sec_color);
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons .icon{
+    cursor: pointer;
+    transition: .4s ease;
+}
+.social-icons .icon:hover {
+    color: var(---main_color)
+}
+
+
+.related-products-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:6rem;
+    width: 100%;
+    overflow-x: hidden ;
+}
+
+
+.related-products-desc{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    color: #555555;
+    font-family: var(---open);
+}
+
+.products-slide{
+    display: flex;
+    height: 40rem;
+    overflow-x: none;
+    gap:2rem;
+        
+}
+
+.track{
+    animation: marquee 8s linear infinite;
+  width: 550%;
+}
+
+.track {
+    white-space: nowrap;
+    will-change: transform;
+    animation: productSlide 14s linear infinite;
+    width: 200%;
+   
+  }
+  .track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes productSlide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }

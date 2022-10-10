@@ -1,11 +1,17 @@
 import React from 'react'
 import { client, urlFor } from '../../lib/client'
-import {BsFillCartFill} from 'react-icons/bs'
+import { BsFillCartFill } from 'react-icons/bs'
+import { GrFacebookOption } from 'react-icons/gr'
+import { AiOutlineTwitter } from 'react-icons/ai'
+import { AiOutlineGooglePlus } from 'react-icons/ai'
+import { AiFillLinkedin } from 'react-icons/ai'
+import Link from 'next/link'
+import {Product} from '../../components'
 
-const ProductDetails = ({ products, relatedProducts }) => {
+const ProductDetails = ({ relatedProducts, products }) => {
 
-    const { name, image, details, category, price} = products
-
+    const {name, image, details, category, price } = products
+    console.log(relatedProducts)
 
     return (
 
@@ -33,8 +39,44 @@ const ProductDetails = ({ products, relatedProducts }) => {
                             <BsFillCartFill />
                             <p>Add to Cart</p>
                         </button>
-                        <p className='product-category'>Categories: {category}</p>
+                        <p className='product-category'>Categories: <span>{category}</span></p>
+                        <div className='share'>
+                            <h1>Share:</h1>
+                            <div className='social-icons'>
+                                <Link href='https://www.facebook.com'>
+                                    <GrFacebookOption className='icon'/>
+                                </Link>
+                                <Link href='https://www.twitter.com'>
+                                    <AiOutlineTwitter className='icon'/>
+                                </Link>
+                                <Link href='https://www.google.com'>
+                                    <AiOutlineGooglePlus className='icon'/>
+                                </Link>
+                                <Link href='https://www.linkedin.com'>
+                                    <AiFillLinkedin className='icon'/>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div className='related-products-container'>
+                <div className='related-products-wrapper'>
+                    <div className='related-products-header'>
+                        <div className='header-hr'>
+                        <h1 className=''><span>Related</span> Products</h1>
+                        <hr className='orange-line'/>
+                        </div>
+                        <p className='related-products-desc'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.
+                        </p>
+
+                    </div>
+                </div>
+                <div className='products-slide track'>
+                    {relatedProducts.map((item)=>(
+                        <Product key={item._id} products={item}  />
+                    ))}
                 </div>
             </div>
         </div>
@@ -64,12 +106,12 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
     const query = `*[_type == "product" && slug.current == '${slug}'][0]`
-    const relatedQuery = '*[_type == product]'
+    const relatedQuery = '*[_type == "product"]'
     const products = await client.fetch(query);
     const relatedProducts = await client.fetch(relatedQuery);
 
     return {
-        props: { products, relatedProducts }
+        props: { relatedProducts, products }
     }
 }
 
