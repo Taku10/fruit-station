@@ -15,7 +15,7 @@ const ListProducts = ({ products }) => {
         </div>
         <div className='products-show'>
           {products.map((item) => (
-            <Product products={item} />
+            <Product key ={item. _id} products={item} />
           ))}
         </div>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsFillCartFill } from 'react-icons/bs'
 import { urlFor } from '../lib/client'
+import Link from 'next/link'
 
 const OurProducts = ({ products }) => {
 
@@ -19,9 +20,11 @@ const OurProducts = ({ products }) => {
                 </div>
                 <div className='home-products-wrapper'>
                     <div className='fruit-wrapper'>
-                        <div className='fruit-image'>
-                            <img src={urlFor(products[0].image[0])} alt="" />
-                        </div>
+                        <Link href={`/product/${products[0].slug.current}`}>
+                            <div className='fruit-image'>
+                                <img src={urlFor(products[0].image[0])} alt="" />
+                            </div>
+                        </Link>
                         <div className='fruit-info'>
                             <h2>{products[0].name}</h2>
                             <div className='price-kg'>
@@ -35,9 +38,11 @@ const OurProducts = ({ products }) => {
                         </div>
                     </div>
                     <div className='fruit-wrapper'>
-                        <div className='fruit-image'>
-                            <img src={urlFor(products[1].image[0])} alt="" />
-                        </div>
+                        <Link href={`/product/${products[1].slug.current}`}>
+                            <div className='fruit-image'>
+                                <img src={urlFor(products[1].image[0])} alt="" />
+                            </div>
+                        </Link>
                         <div className='fruit-info'>
                             <h2>{products[1].name}</h2>
                             <div className='price-kg'>
@@ -51,9 +56,11 @@ const OurProducts = ({ products }) => {
                         </div>
                     </div>
                     <div className='fruit-wrapper'>
-                        <div className='fruit-image'>
-                            <img src={urlFor(products[2].image[0])} alt="" />
-                        </div>
+                        <Link href={`/product/${products[2].slug.current}`}>
+                            <div className='fruit-image'>
+                                <img src={urlFor(products[2].image[0])} alt="" />
+                            </div>
+                        </Link>
                         <div className='fruit-info'>
                             <h2>{products[2].name}</h2>
                             <div className='price-kg'>
