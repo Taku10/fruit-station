@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Link from 'next/link'
 import fruit_logo from '../images/fruit-logo.png'
 import Image from 'next/image'
@@ -9,17 +9,25 @@ import { GiFruitBowl } from 'react-icons/gi'
 const Navbar = ({ logo }) => {
   const [nav, setNav] = useState(false)
 
-  //navbar color change on scroll
-  // const changeNav = () => {
-  //   console.log(window.scrollY)
-  //   if (window.scrollY >= 1) {
-  //     setNav(true)
-  //   } else {
-  //     setNav(false)
-  //   }
-  // }
 
-  // window.addEventListener('scroll', changeNav);
+
+  useEffect(()=>{
+    const changeNav = () => {
+      console.log(window.scrollY)
+      if (window.scrollY >= 1) {
+        setNav(true)
+      } else {
+        setNav(false)
+      }
+    }
+    window.addEventListener('scroll', changeNav);
+  })
+  //navbar color change on scroll
+ 
+
+  
+
+ 
 
   return (
     <nav className={`${ nav ? 'navbar-container active': 'navbar-container'}`}>
@@ -38,8 +46,14 @@ const Navbar = ({ logo }) => {
         <li><Link href='/'>Contact</Link></li>
       </ul>
       <div className='cart-search-nav'>
-        <BsFillCartFill className='cart-nav' />
+        <button className='cart-button'>
+          <BsFillCartFill className='cart-nav' />
+          <span className='cart-item-qty'>2</span>
+        </button>
+        <button className='search-button'>
         <AiOutlineSearch className='search-nav' />
+        </button>
+        
       </div>
     </nav>
   )

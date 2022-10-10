@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
     <div className='layout'>
       <Head>
         <title>Fruit Station</title>
+        <link rel="shortcut icon" href="/site-logo.png" />
       </Head>
       <header>
         <Navbar />
