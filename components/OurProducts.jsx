@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 const OurProducts = ({ products }) => {
 
-    console.log(products[0].image)
     return (
         <div className='our-products-container'>
             <div className='our-products-wrapper'>

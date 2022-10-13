@@ -5,19 +5,16 @@ import Link from 'next/link'
 
 
 
-const Home = ({ products}) => {
-
-
-  console.log(products)
+const Home = ({ products }) => {
 
   return (
     <>
-    <div className='home-container'>
-      <Start />
-      <Benefits />
-      <OurProducts products ={products} />
-      <DealMonth />
-    </div>
+      <div className='home-container'>
+        <Start />
+        <Benefits />
+        <OurProducts products={products} />
+        <DealMonth />
+      </div>
     </>
   )
 }

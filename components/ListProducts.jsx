@@ -3,7 +3,6 @@ import { client } from '../lib/client'
 import { Product } from '../components';
 
 const ListProducts = ({ products }) => {
-  console.log(products)
   return (
     <div className='list-products-container'>
       <div className='list-products-wrapper'>

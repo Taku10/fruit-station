@@ -1,17 +1,22 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { client, urlFor } from '../../lib/client'
 import { BsFillCartFill } from 'react-icons/bs'
 import { GrFacebookOption } from 'react-icons/gr'
 import { AiOutlineTwitter } from 'react-icons/ai'
 import { AiOutlineGooglePlus } from 'react-icons/ai'
 import { AiFillLinkedin } from 'react-icons/ai'
+import { AiOutlineMinus} from 'react-icons/ai'
+import { AiOutlinePlus} from 'react-icons/ai'
 import Link from 'next/link'
 import {Product} from '../../components'
+import {Context} from '../../context/StateContext'
 
 const ProductDetails = ({ relatedProducts, products }) => {
 
-    const {name, image, details, category, price } = products
-    console.log(relatedProducts)
+    const {name, image, details, category, price } = products;
+    const useStateContext = useContext(Context)
+    const{qty, decreaseQty, increaseQty, onAdd}= useStateContext;
+    console.log(qty)
 
     return (
 
@@ -32,10 +37,12 @@ const ProductDetails = ({ relatedProducts, products }) => {
                         <p className='kg'>Per Kg</p>
                         <h1 className='product-price'>R {price}</h1>
                         <p className='product-desc'>{details}</p>
-                        <form className='product-form'>
-                            <input type="number" className='input-qty' />
-                        </form>
-                        <button className='add-to-cart'>
+                        <div className='enter-qty'>
+                            <button className='minus' onClick={decreaseQty}><AiOutlineMinus /></button>
+                            <p className='qty-input'>{qty}</p>
+                            <button className='plus' onClick={increaseQty}><AiOutlinePlus /></button>
+                        </div>
+                        <button className='add-to-cart' onClick={()=> onAdd(products, qty)}>
                             <BsFillCartFill />
                             <p>Add to Cart</p>
                         </button>
