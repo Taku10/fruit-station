@@ -11,7 +11,7 @@ import { BsTrash } from 'react-icons/bs'
 
 const Cart = () => {
   const useStateContext = useContext(Context)
-  const { showCart, setShowCart, cartItems, totalQuantities, totalPrice } = useStateContext;
+  const { showCart, setShowCart, cartItems, totalQuantities, totalPrice, toggleCartItemQuantity } = useStateContext;
   const [nav, setNav] = useState(false)
 
   useEffect(() => {
@@ -59,9 +59,9 @@ const Cart = () => {
                 <div className='name-qty'>
                   <h1>{item.name}</h1>
                   <div className='enter-qty'>
-                    <button className='minus' onClick=''><AiOutlineMinus /></button>
-                    <p className='qty-input'>0</p>
-                    <button className='plus' onClick=''><AiOutlinePlus /></button>
+                    <button className='minus' onClick={()=>toggleCartItemQuantity(item._id, 'dec')}><AiOutlineMinus /></button>
+                    <p className='qty-input'>{item.quantity}</p>
+                    <button className='plus' onClick={()=>toggleCartItemQuantity(item._id, 'inc')}><AiOutlinePlus /></button>
                   </div>
                 </div>
 
@@ -79,6 +79,9 @@ const Cart = () => {
               <div className='total'>
                 <h3>Subtotal:</h3>
                 <h3>R {totalPrice}</h3>
+              </div>
+              <div className='proceed-checkout'>
+                <button>Proceed to Checkout</button>
               </div>
             </div>
           )}
