@@ -11,7 +11,7 @@ import { BsTrash } from 'react-icons/bs'
 
 const Cart = () => {
   const useStateContext = useContext(Context)
-  const { showCart, setShowCart, cartItems, totalQuantities, totalPrice, toggleCartItemQuantity } = useStateContext;
+  const { showCart, setShowCart, cartItems, totalQuantities, totalPrice, toggleCartItemQuantity, onRemove } = useStateContext;
   const [nav, setNav] = useState(false)
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const Cart = () => {
               </div>
               <div className='cart-right'>
                 <p className='cart-price'>R {item.price}</p>
-                <BsTrash className='delete-product' />
+                <BsTrash className='delete-product' onClick={()=> onRemove(item)} />
               </div>
             </div>
           ))}
