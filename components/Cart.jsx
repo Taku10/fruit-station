@@ -8,6 +8,9 @@ import { urlFor } from '../lib/client'
 import { AiOutlineMinus } from 'react-icons/ai'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { BsTrash } from 'react-icons/bs'
+import getStripe from '../lib/getStripe'
+import { RESPONSE_LIMIT_DEFAULT } from 'next/dist/server/api-utils'
+import toast from 'react-hot-toast'
 
 const Cart = () => {
   const useStateContext = useContext(Context)
@@ -26,6 +29,26 @@ const Cart = () => {
     window.addEventListener('scroll', changeNav);
   })
 
+  const handdleCheckOut =async()=>{
+    const stripe = await getStripe();
+
+// make api request
+    const response = await fetch('/api/stripe', {
+      medthod:'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify(cartItems),
+    });
+    
+    if(response.statusCode === 500) return;
+
+    const data = await response.json();
+
+    toast.loading('Redirecting...')
+
+    stripe.redirectToCheckOut({sessionId: data.id});
+  }
 
 
 
@@ -81,7 +104,7 @@ const Cart = () => {
                 <h3>R {totalPrice}</h3>
               </div>
               <div className='proceed-checkout'>
-                <button>Proceed to Checkout</button>
+                <button onClick={handleCheckOut}>Proceed to Checkout</button>
               </div>
             </div>
           )}
