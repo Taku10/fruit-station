@@ -29,25 +29,27 @@ const Cart = () => {
     window.addEventListener('scroll', changeNav);
   })
 
-  const handdleCheckOut =async()=>{
+  const handleCheckout =async()=>{
     const stripe = await getStripe();
 
 // make api request
     const response = await fetch('/api/stripe', {
-      medthod:'POST',
+      method:'POST',
       headers:{
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body:JSON.stringify(cartItems),
     });
     
+ 
     if(response.statusCode === 500) return;
 
     const data = await response.json();
+    console.log(data.id)
 
-    toast.loading('Redirecting...')
+    toast.loading('Redirecting...');
 
-    stripe.redirectToCheckOut({sessionId: data.id});
+    stripe.redirectToCheckout({sessionId: data.id});
   }
 
 
@@ -104,7 +106,7 @@ const Cart = () => {
                 <h3>R {totalPrice}</h3>
               </div>
               <div className='proceed-checkout'>
-                <button onClick={handleCheckOut}>Proceed to Checkout</button>
+                <button onClick={handleCheckout}>Proceed to Checkout</button>
               </div>
             </div>
           )}
