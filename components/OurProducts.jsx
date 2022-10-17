@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { BsFillCartFill } from 'react-icons/bs'
 import { urlFor } from '../lib/client'
 import Link from 'next/link'
+import { Context } from '../context/StateContext'
 
 const OurProducts = ({ products }) => {
+
+    const{onAdd, qty}= useContext(Context);
 
     return (
         <div className='our-products-container'>
@@ -28,12 +31,8 @@ const OurProducts = ({ products }) => {
                             <h2>{products[0].name}</h2>
                             <div className='price-kg'>
                                 <p>per Kg</p>
-                                <h3>R {products[0].price}</h3>
+                                <h3>$ {products[0].price}</h3>
                             </div>
-                            <button className='add-to-cart'>
-                                <BsFillCartFill />
-                                <p>Add to Cart</p>
-                            </button>
                         </div>
                     </div>
                     <div className='fruit-wrapper'>
@@ -46,12 +45,8 @@ const OurProducts = ({ products }) => {
                             <h2>{products[1].name}</h2>
                             <div className='price-kg'>
                                 <p>per Kg</p>
-                                <h3>R {products[1].price}</h3>
+                                <h3>$ {products[1].price}</h3>
                             </div>
-                            <button className='add-to-cart'>
-                                <BsFillCartFill />
-                                <p>Add to Cart</p>
-                            </button>
                         </div>
                     </div>
                     <div className='fruit-wrapper'>
@@ -64,12 +59,8 @@ const OurProducts = ({ products }) => {
                             <h2>{products[2].name}</h2>
                             <div className='price-kg'>
                                 <p>per Kg</p>
-                                <h3>R {products[2].price}</h3>
+                                <h3>$ {products[2].price}</h3>
                             </div>
-                            <button className='add-to-cart'>
-                                <BsFillCartFill />
-                                <p>Add to Cart</p>
-                            </button>
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,6 @@ const Navbar = ({ logo }) => {
 
   useEffect(()=>{
     const changeNav = () => {
-      console.log(window.scrollY)
       if (window.scrollY >= 1) {
         setNav(true)
       } else {
@@ -44,10 +43,10 @@ const Navbar = ({ logo }) => {
       </Link>
       <ul className='nav-items'>
         <li><Link href='/'>Home</Link></li>
-        <li><Link href='shop'>Shop</Link></li>
+        <li><Link href='/shop'>Shop</Link></li>
         <li><Link href='/'>News</Link></li>
         <li><Link href='/'>About</Link></li>
-        <li><Link href='/'>Contact</Link></li>
+        <li><Link href='/contact'>Contact</Link></li>
       </ul>
       <div className='cart-search-nav'>
         <button className='cart-button' onClick={()=> setShowCart(true)}>

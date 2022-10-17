@@ -16,7 +16,6 @@ const ProductDetails = ({ relatedProducts, products }) => {
     const {name, image, details, category, price } = products;
     const useStateContext = useContext(Context)
     const{qty, decreaseQty, increaseQty, onAdd}= useStateContext;
-    console.log(qty)
 
     return (
 
@@ -35,7 +34,7 @@ const ProductDetails = ({ relatedProducts, products }) => {
                     <div className='product-info'>
                         <h1 className='product-name'>{name}</h1>
                         <p className='kg'>Per Kg</p>
-                        <h1 className='product-price'>R {price}</h1>
+                        <h1 className='product-price'>$ {price}</h1>
                         <p className='product-desc'>{details}</p>
                         <div className='enter-qty'>
                             <button className='minus' onClick={decreaseQty}><AiOutlineMinus /></button>

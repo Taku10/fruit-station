@@ -104,7 +104,7 @@
 
 .products-show{
   display: grid;
-    width: 70%;
+    width: 80%;
     height:85%;
     grid-template-columns: 1fr 1fr 1fr;
     gap:2rem;
