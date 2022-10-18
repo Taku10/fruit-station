@@ -11,6 +11,7 @@
 .product-details-container {
     width: 100%;
     height: 100%;
+
     
 }
 
@@ -22,7 +23,8 @@
     background-color: var(---head_color);
     background-attachment: fixed;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+   
 }
 
 
@@ -72,6 +74,11 @@
     height: 27rem;
     width: 35rem;
     box-shadow: 1px 2px 10px -3px;
+    transition: .6s ease-in;
+}
+
+.product-image:hover{
+    background-color: #ebb589;
 }
 
 .product-image img {
@@ -207,13 +214,18 @@
 }
 
 
-.related-products-container{
+/* relates products starts here************************ */
+
+.related-products-container{ 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap:6rem;
     width: 100%;
     overflow-x: hidden ;
+    border: 1px solid;
+    max-height: 100%;
+    
 }
 
 
@@ -230,19 +242,21 @@
     height: 40rem;
     overflow-x: none;
     gap:2rem;
+    justify-content: center;
+
         
 }
 
 .track{
     animation: marquee 8s linear infinite;
-  width: 550%;
+  width: 80%;
 }
 
 .track {
     white-space: nowrap;
     will-change: transform;
     animation: productSlide 14s linear infinite;
-    width: 200%;
+    width: 80%;
    
   }
   .track:hover {
@@ -250,5 +264,5 @@
   }
   @keyframes productSlide {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(0%); }
   }

@@ -23,7 +23,7 @@ const ProductDetails = ({ relatedProducts, products }) => {
             <div className='product-start-container'>
                 <div className='product-start-header'>
                     <p>SEE MORE DETAILS</p>
-                    <h1>Single Product</h1>
+                    <h1>{name}</h1>
                 </div>
             </div>
             <div className='details-container'>
@@ -80,9 +80,48 @@ const ProductDetails = ({ relatedProducts, products }) => {
                     </div>
                 </div>
                 <div className='products-slide track'>
-                    {relatedProducts.map((item)=>(
-                        <Product key={item._id} products={item}  />
-                    ))}
+                <div className='fruit-wrapper'>
+                        <Link href={`/product/${relatedProducts[5].slug.current}`}>
+                            <div className='fruit-image'>
+                                <img src={urlFor(relatedProducts[5].image[0])} alt="" />
+                            </div>
+                        </Link>
+                        <div className='fruit-info'>
+                            <h2>{relatedProducts[5].name}</h2>
+                            <div className='price-kg'>
+                                <p>per Kg</p>
+                                <h3>$ {relatedProducts[5].price}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='fruit-wrapper'>
+                        <Link href={`/product/${relatedProducts[6].slug.current}`}>
+                            <div className='fruit-image'>
+                                <img src={urlFor(relatedProducts[6].image[0])} alt="" />
+                            </div>
+                        </Link>
+                        <div className='fruit-info'>
+                            <h2>{relatedProducts[6].name}</h2>
+                            <div className='price-kg'>
+                                <p>per Kg</p>
+                                <h3>$ {relatedProducts[6].price}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='fruit-wrapper'>
+                        <Link href={`/product/${relatedProducts[3].slug.current}`}>
+                            <div className='fruit-image'>
+                                <img src={urlFor(relatedProducts[3].image[0])} alt="" />
+                            </div>
+                        </Link>
+                        <div className='fruit-info'>
+                            <h2>{relatedProducts[3].name}</h2>
+                            <div className='price-kg'>
+                                <p>per Kg</p>
+                                <h3>$ {relatedProducts[3].price}</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

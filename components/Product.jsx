@@ -3,7 +3,7 @@ import { BsFillCartFill } from 'react-icons/bs'
 import { urlFor } from '../lib/client'
 import Link from 'next/link'
 
-const Product = ({ products: { name, price, image, slug } }) => {
+const Product = ({ sort, products: { name, price, image, slug } }) => {
 
 
   return (

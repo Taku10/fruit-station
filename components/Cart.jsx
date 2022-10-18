@@ -55,7 +55,7 @@ const Cart = () => {
 
 
   return (
-    <div className={`${nav ? 'cart-container active' : 'cart-container'}`}>
+    <div className={`${showCart ? 'cart-container anim' : 'cart-container'}`}>
       <div className='cart-wrapper'>
         <button className='cart-back-button' onClick={() => setShowCart(false)}>
           <BsArrowLeft />
@@ -83,6 +83,7 @@ const Cart = () => {
                 </div>
                 <div className='name-qty'>
                   <h1>{item.name}</h1>
+                  <BsTrash className='delete-product' onClick={()=> onRemove(item)} />
                   <div className='enter-qty'>
                     <button className='minus' onClick={()=>toggleCartItemQuantity(item._id, 'dec')}><AiOutlineMinus /></button>
                     <p className='qty-input'>{item.quantity}</p>
@@ -93,8 +94,8 @@ const Cart = () => {
 
               </div>
               <div className='cart-right'>
-                <p className='cart-price'>R {item.price}</p>
-                <BsTrash className='delete-product' onClick={()=> onRemove(item)} />
+                <p className='cart-price'>$ {item.price}</p>
+                
               </div>
             </div>
           ))}
@@ -103,7 +104,7 @@ const Cart = () => {
             <div className='cart-bottom'>
               <div className='total'>
                 <h3>Subtotal:</h3>
-                <h3>R {totalPrice}</h3>
+                <h3>$ {totalPrice}</h3>
               </div>
               <div className='proceed-checkout'>
                 <button onClick={handleCheckout}>Proceed to Checkout</button>
