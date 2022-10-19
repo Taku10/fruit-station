@@ -21,6 +21,8 @@ html{
 .layout {
   width: 100%;
   height: 1000rem;
+  position: relative;
+
 }
 
 header {

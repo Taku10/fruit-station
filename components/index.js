@@ -9,4 +9,6 @@ export {default as OurProducts} from './OurProducts'
 export {default as DealMonth} from './DealMonth'
 export {default as ShopStart} from './ShopStart'
 export {default as ListProducts} from './ListProducts'
+export {default as Testimonials} from './Testimonials'
+export {default as Video} from './Video'
 

@@ -12,6 +12,7 @@ export const StateContext = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty, setQty] = useState(1)
+    const[video, setVideo]=useState(false)
 
     //cart item quantity increment and decrement
     const toggleCartItemQuantity = (id, value) => {
@@ -81,7 +82,7 @@ export const StateContext = ({ children }) => {
     }
 
     return (
-        <Context.Provider value={{ onRemove, showCart, setShowCart, cartItems, totalPrice, totalQuantities, qty, increaseQty, decreaseQty, onAdd, toggleCartItemQuantity }}>
+        <Context.Provider value={{ video, setVideo, onRemove, showCart, setShowCart, cartItems, totalPrice, totalQuantities, qty, increaseQty, decreaseQty, onAdd, toggleCartItemQuantity }}>
             {children}
         </Context.Provider>
     )

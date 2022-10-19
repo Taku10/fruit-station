@@ -1,0 +1,45 @@
+:root {
+    ---open: "Open Sans", sans-serif;
+    ---poppins: Poppins, sans-serif;
+    ---main_color: #f28123;
+    ---sec_color: #051922
+}
+
+.history-container{
+border: 1px solid;
+height: 40rem;
+width: 100%;
+}
+
+.history-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.video-wrapper{
+    position: absolute;
+    height:25rem;
+    width:50%;
+    margin-left: 25rem;
+    margin-top:-5rem;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+.close-video{
+    align-self: flex-end;
+    font-size: 1.5rem;
+    cursor: pointer;
+    animation: close-anim 1s ease-in;
+}
+
+@keyframes close-anim {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
