@@ -1,5 +1,5 @@
 import React from 'react'
-import { Product, Footer, Start, Benefits, OurProducts, DealMonth, Testimonials, Video } from '../components'
+import { Product, Footer, Start, Benefits, OurProducts, DealMonth, Testimonials, Video , Promo} from '../components'
 import { client } from '../lib/client'
 import Link from 'next/link'
 
@@ -16,6 +16,7 @@ const Home = ({ products }) => {
         <DealMonth />
         <Testimonials />
         <Video />
+        <Promo />
       </div>
     </>
   )

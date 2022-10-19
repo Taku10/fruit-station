@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { Context } from '../context/StateContext'
-import {AiOutlineClose} from 'react-icons/ai'
+import { AiOutlineClose } from 'react-icons/ai'
+import { FaPlay } from 'react-icons/fa'
+import fruit_basket from '../images/fruit-basket.jpg';
 
 
 const Video = () => {
@@ -8,8 +10,8 @@ const Video = () => {
     const { video, setVideo } = useStateContext;
 
     const videoPlayer = (
-        <div className='video-wrapper'>
-            <AiOutlineClose className='close-video' onClick={()=> setVideo(false)}/>
+        <div className='video-wrapper' role='button' >
+            <AiOutlineClose className='close-video' onClick={() => setVideo(false)}/>
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/GFmyOSdVs5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     )
@@ -20,12 +22,13 @@ const Video = () => {
             {video && videoPlayer}
             <div className='history-wrapper'>
                 <div className='history-left'>
-                    <img src="" alt="" />
-                    <button onClick={() => setVideo(true)}>play</button>
+                    <div className='play-icon-wrapper' onClick={() => setVideo(true)}>
+                        < FaPlay className='play-icon'/>
+                    </div>
                 </div>
                 <div className='history-right'>
-                    <p className='since-year'>Since 1971</p>
-                    <h1 className='we-are-fruitku'>We are FruitKu</h1>
+                    <p className='since-year'>Since Year 1998</p>
+                    <h1 className='we-are-fruitku'>We are <span>FruitKu</span> </h1>
                     <div className='history-story'>
                         <p>
                             Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.

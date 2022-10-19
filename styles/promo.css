@@ -1,0 +1,102 @@
+:root {
+    ---open: "Open Sans", sans-serif;
+    ---poppins: Poppins, sans-serif;
+    ---main_color: #f28123;
+    ---sec_color: #051922
+}
+
+
+.promo-container{
+    height: 30rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #e4e4e6;
+    margin-top: 8rem;
+
+}
+
+.promo-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-left: 10%;
+}
+
+.promo-details{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    padding: 4rem 0rem;
+}
+
+.promo-image{
+    background-image: url('../images/promo-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.promo-heading{
+    font-size: 25px;
+    font-family: var(---poppins);
+    color: var(---sec_color);
+}
+
+.promo-heading h1{
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.promo-heading h1 span{
+    color: var(---main_color);
+}
+
+.sale-percent-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sale-upto p{
+ color: var(---sec_color);
+ font-weight: 400;
+ font-family: var(---open);
+ font-size:24px
+}
+
+.sale-percent{
+color: var(---sec_color);
+ font-weight: 400;
+ font-family: var(---open);
+ font-size:24px
+}
+
+.sale-percent span{
+    color: var(---main_color);
+    font-size: 60px;
+    font-family: var(---poppins);
+    font-weight: 700;
+    margin-right:1rem ;
+    
+}
+
+.shop-now{
+    width: 8rem;
+    height: 3rem;
+    border-radius: 2rem;
+    color: white;
+    background-color: var(---main_color);
+    border: none;
+    padding:0rem 1rem;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    font-family: var(---poppins);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.shop-now:hover{
+    background-color: var(---sec_color);
+    color:var(---main_color)
+}
