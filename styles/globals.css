@@ -18,7 +18,10 @@ html{
 }
 
  
-
+footer{
+  border: 1px solid blue;
+  height: 40rem;
+}
 
 
 .layout {
@@ -36,7 +39,7 @@ header {
 }
 
 main {
-  height: 500rem;
+  max-height: 500rem;
   width: 100%;
  
 }

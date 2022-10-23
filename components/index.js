@@ -12,4 +12,6 @@ export {default as ListProducts} from './ListProducts'
 export {default as Testimonials} from './Testimonials'
 export {default as Video} from './Video'
 export {default as Promo} from './Promo'
+export {default as OurNews} from './OurNews'
+export {default as Brands} from './Brands'
 

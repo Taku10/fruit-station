@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import Head from 'next/head'
 import Footer from './Footer'
 import Navbar from './Navbar'
+import Brands from './Brands'
 import { Context } from '../context/StateContext'
 
 const Layout = ({ children }) => {
@@ -23,7 +24,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <footer>
-        {/* <Footer /> */}
+      <Brands />
       </footer>
     </div>
   )
