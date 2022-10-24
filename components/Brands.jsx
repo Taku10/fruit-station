@@ -8,7 +8,7 @@ const Brands = () => {
     console.log(brand_data)
   return (
     <div className='brands-container'>
-         <Slider className='brand-slide' slidesToShow={4}  speed= {500} autoplay={true} autoplaySpeed={1000}>
+         <Slider className='brand-slide' slidesToShow={4}  autoplay={true} autoplaySpeed={1000}>
 
             {brand_data.map((item)=>(
                 <div className='brand'>
