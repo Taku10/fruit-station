@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
       </main>
       <footer>
       <Brands />
+      <Footer />
       </footer>
     </div>
   )
