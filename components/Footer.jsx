@@ -68,16 +68,15 @@ const Footer = () => {
             <p>Subscribe to our mailing list to get the latest updates.</p>
             <div className='email-container'>
               <input type="text" placeholder='Email' />
-              <div className='email-icon'>
-                <FaPaperPlane />
-              </div>
+              <button className='email-icon'>
+                <FaPaperPlane className='paper-plane'/>
+              </button>
             </div>
           </div>
         </div>
         <div className='footer-bottom-container'>
           <div className='trademark'>
-            <p>Copyrights © 2019 - All Rights Reserved</p>
-            <p>Distributed By - <span>Themewagon</span> </p>
+            <p>Copyrights © 2022 - All Rights Reserved</p>
           </div>
           <div className='footer-socials'>
 

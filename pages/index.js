@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 
 
-const Home = ({ products }) => {
+const Home = ({ products, news }) => {
 
   return (
     <>
@@ -17,7 +17,7 @@ const Home = ({ products }) => {
         <Testimonials />
         <Video />
         <Promo />
-        <OurNews />
+        <OurNews news={news} />
       </div>
     </>
   )
@@ -26,11 +26,13 @@ const Home = ({ products }) => {
 
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"]'
+  const newsQuery = '*[_type == "news"]'
+  const news = await client.fetch(newsQuery)
   const products = await client.fetch(query)
 
   return {
     props: {
-      products
+      products,news
     }
   }
 }

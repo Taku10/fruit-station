@@ -15,19 +15,20 @@
 
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
  
 footer{
-  border: 1px solid blue;
-  height: 60rem;
+  max-height: 60rem;
 }
 
 
 .layout {
   width: 100%;
-  height: 1000rem;
+  max-height: 500rem;
   position: relative;
+  
 
 
 }
@@ -37,6 +38,8 @@ header {
   position: fixed;
   z-index: 12;
 }
+
+
 
 main {
   max-height: 500rem;
