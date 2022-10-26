@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import Head from 'next/head'
 import Footer from './Footer'
 import Navbar from './Navbar'
@@ -8,11 +8,11 @@ import { Context } from '../context/StateContext'
 const Layout = ({ children }) => {
 
   const useStateContext = useContext(Context);
-  const{video, setVideo}=useStateContext;
+  const { video, setVideo } = useStateContext;
 
   return (
     <div className='layout'>
-      <div className={`${video ?'dim active': 'dim'}`} onClick={() => setVideo(false)}></div>
+      <div className={`${video ? 'dim active' : 'dim'}`} onClick={() => setVideo(false)}></div>
       <Head>
         <title>FruitKu </title>
         <link rel="shortcut icon" href="/site-logo.png" />
@@ -24,8 +24,8 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <footer>
-      <Brands />
-      <Footer />
+        <Brands />
+        <Footer />
       </footer>
     </div>
   )
