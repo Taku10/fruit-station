@@ -33,9 +33,6 @@ export default {
         name: 'date',
         title: 'date',
         type: 'date',
-        options: {
-          dateFormat: moment().format("dddd, MMMM Do YYYY"),
-        }
       },
       { 
         name: 'body1',
