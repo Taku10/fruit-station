@@ -44,7 +44,7 @@ header {
 main {
   max-height: 500rem;
   width: 100%;
- 
+ margin-bottom: 10rem;
 }
 
 .navbar-container {

@@ -36,14 +36,12 @@ const OurNews = ({ news }) => {
                                 <p>{news[0].date}</p>
                             </div>
                         </div>
-                        <p className='article-body'>
-                            Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.
-                        </p>
+                        <p className='article-body'>{news[0].body1.substring(0, 117)}...</p>
                         <Link href={`/news/${news[0].slug.current}`}>
-                        <div className='article-read-more'>
-                            <p>read more</p>
-                            <MdOutlineKeyboardArrowRight className='article-arrow-icon'/>
-                        </div>
+                            <div className='article-read-more'>
+                                <p>read more</p>
+                                <MdOutlineKeyboardArrowRight className='article-arrow-icon' />
+                            </div>
                         </Link>
                     </div>
                     <div className='article'>
@@ -62,22 +60,20 @@ const OurNews = ({ news }) => {
                             </div>
 
                         </div>
-                        <p className='article-body'>
-                            Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.
-                        </p>
+                        <p className='article-body'>{news[1].body1.substring(0, 117)}...</p>
                         <Link href={`/news/${news[1].slug.current}`}>
-                        <div className='article-read-more'>
-                            <p>read more</p>
-                            <MdOutlineKeyboardArrowRight className='article-arrow-icon'/>
-                        </div>
+                            <div className='article-read-more'>
+                                <p>read more</p>
+                                <MdOutlineKeyboardArrowRight className='article-arrow-icon' />
+                            </div>
                         </Link>
-                        
+
                     </div>
                     <div className='article'>
                         <div className='article-image'>
                             <img src={urlFor(news[2].image[0])} alt="" />
                         </div>
-                        <h3 className='article-title'>Good thoughts bear good fresh juicy fruit.</h3>
+                        <h3 className='article-title'>{news[2].title}</h3>
                         <div className='article-meta'>
                             <div className='admin'>
                                 <BsFillPersonFill />
@@ -88,14 +84,12 @@ const OurNews = ({ news }) => {
                                 <p>{news[2].date}</p>
                             </div>
                         </div>
-                        <p className='article-body'>
-                            Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.
-                        </p>
+                        <p className='article-body'>{news[2].body1.substring(0, 117)}...</p>
                         <Link href={`/news/${news[2].slug.current}`}>
-                        <div className='article-read-more'>
-                            <p>read more</p>
-                            <MdOutlineKeyboardArrowRight className='article-arrow-icon'/>
-                        </div>
+                            <div className='article-read-more'>
+                                <p>read more</p>
+                                <MdOutlineKeyboardArrowRight className='article-arrow-icon' />
+                            </div>
                         </Link>
                     </div>
                 </div>

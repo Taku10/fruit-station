@@ -1,8 +1,17 @@
 import React from 'react'
 import { client, urlFor } from '../../lib/client'
+import { BsFillPersonFill } from 'react-icons/bs'
+import { MdDateRange } from 'react-icons/md'
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
+import Link from 'next/link'
+
+
+
+
+
 const NewsDetails = ({ otherNews, news }) => {
 
-  const { title, date, body, image } = news
+  const { title, date, body1, body2, image } = news
 
   return (
     <div className='news-details-container'>
@@ -12,9 +21,43 @@ const NewsDetails = ({ otherNews, news }) => {
           <h1>Single Article</h1>
         </div>
       </div>
-      <div className='news-article-container'>
-        <div className='news-article-wrapper'>
-            div
+      <div className='single-article-container'>
+        <div className='single-article-wrapper'>
+          <div className='main-left-content'>
+            <div className='single-article-image'>
+              <img src={urlFor(image && image[0])} />
+            </div>
+            <div className='article-meta'>
+              <div className='admin'>
+                <BsFillPersonFill />
+                <p>Admin</p>
+              </div>
+              <div className="published-date">
+                <MdDateRange />
+                <p>{date}</p>
+              </div>
+            </div>
+            <h1 className='single-article-title'>{title}</h1>
+            <div className='single-article-body'>
+              <p className='body-1'>{body1}</p>
+              <p className='body-2'>{body2}</p>
+            </div>
+
+          </div>
+          <div className='other-right-content'>
+            <h1 className='recent-post'>Recent Posts</h1>
+            <div className='other-posts'>
+              {otherNews.map((item) => (
+                <Link href={`/news/${item.slug.current}`}>
+                  <div className='post-link'>
+                    <MdOutlineKeyboardArrowRight className='other-post-arrow' />
+                    <p>{item.title}</p>
+                  </div>
+                </Link>
+              ))}
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -24,8 +67,8 @@ const NewsDetails = ({ otherNews, news }) => {
 export const getStaticPaths = async () => {
   const newsQuery = `*[_type == "news"]{
         slug {
-            current
-        }
+        current
+      }
     }`
 
   const news = await client.fetch(newsQuery)

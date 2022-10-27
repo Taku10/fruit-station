@@ -32,12 +32,20 @@ export default {
       { 
         name: 'date',
         title: 'date',
-        type: 'string',
+        type: 'date',
+        options: {
+          dateFormat: moment().format("dddd, MMMM Do YYYY"),
+        }
       },
       { 
-        name: 'body',
-        title: 'Body',
-        type: 'string',
-      }, 
+        name: 'body1',
+        title: 'Body1',
+        type: 'text',
+      },
+      { 
+        name: 'body2',
+        title: 'Body2',
+        type: 'text',
+      },  
     ]
   }

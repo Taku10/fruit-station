@@ -139,6 +139,7 @@
     align-items: center;
     gap:.5rem;
     color: #a6adb0;
+    font-family: var(---open);
 }
 
 .published-date p{
