@@ -1,0 +1,141 @@
+:root {
+    ---open: "Open Sans", sans-serif;
+    ---poppins: Poppins, sans-serif;
+    ---main_color: #f28123;
+    ---sec_color: #051922
+  }
+
+  .about-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-start-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 57vh;
+    border: 1px solid;
+    background-color:var(---head_color);
+    background-attachment: fixed;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:4rem;
+  }
+
+  .about-start-header{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    gap:2rem;
+    margin-top: 4rem;
+  }
+
+  .about-start-header p{
+    font-family: var(---open);
+    font-weight: 700;
+    font-size:14px;
+    color: var(---main_color);
+    letter-spacing: .5rem;
+  }
+
+  .about-start-header h1{
+    font-family: var(---poppins);
+    font-weight: 900;
+    font-size:50px;
+    color: #ffffff;
+
+  }
+
+
+  .about-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 80%;
+    gap:5rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+
+  .about-benefits-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:3rem;
+  }
+
+  .about-grid-left{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+  }
+
+  .about-grid-left h1{
+    font-size:42px;
+    color: var(---sec_color);
+    font-weight: 700;
+    font-family: var(---poppins)
+  }
+
+  .orange-text{
+    color: var(---main_color);
+  }
+
+
+  .about-benefit{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+  }
+
+  .about-benefits-desc{
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+  }
+
+  .about-benefits-desc h2{
+    font-family: var(---poppins);
+    font-size: 18px;
+    color:var(---sec_color);
+    font-weight: 700;
+  }
+
+ 
+
+  .about-benefits-desc p{
+    font-family: var(---open);
+    font-size: 14px;
+    color: #8f989c;
+    font-weight: 400;
+  }
+
+  .about-benefit-icon{
+    border: 2px dotted var(---main_color);
+    height: 3rem;
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:50% ;
+  }
+
+  .about-icon{
+    font-size: 30px;
+    color: var(---main_color);
+  }
+
+  .about-grid-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/fruit-basket.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius:1rem ;
+    border-bottom-left-radius:1rem ;
+}

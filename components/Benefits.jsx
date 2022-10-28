@@ -2,6 +2,9 @@ import React from 'react'
 import {TbTruckDelivery} from 'react-icons/tb'
 import {BiPhoneCall} from 'react-icons/bi'
 import {TiArrowSync} from 'react-icons/ti'
+
+
+
 const Benefits = () => {
   return (
     <div className='benefits-container'>

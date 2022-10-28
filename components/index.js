@@ -15,4 +15,5 @@ export {default as Promo} from './Promo'
 export {default as OurNews} from './OurNews'
 export {default as Brands} from './Brands'
 export {default as Article} from './Article'
+export {default as Team} from './Team'
 
