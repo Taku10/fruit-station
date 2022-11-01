@@ -1,3 +1,12 @@
+
+import dynamic from 'next/dynamic'
+
+const Map= dynamic(()=>import('./Map'), {
+    ssr:false
+})
+
+export default Map
+
 export {default as Footer} from './Footer'
 export {default as Cart} from './Cart'
 export {default as Layout} from './Layout'
@@ -16,6 +25,6 @@ export {default as OurNews} from './OurNews'
 export {default as Brands} from './Brands'
 export {default as Article} from './Article'
 export {default as Team} from './Team'
-export {default as Map} from './Map'
+
 
 

@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import {HiLocationMarker} from 'react-icons/hi'
 import {AiOutlineClockCircle} from 'react-icons/ai'
 import {AiFillContacts} from 'react-icons/ai'
-import { Map } from '../components'
+import Map  from '../components/index'
 
 
 const Contact = () => {
