@@ -5,14 +5,14 @@ import Image from 'next/image'
 import { BsFillCartFill } from 'react-icons/bs'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { GiFruitBowl } from 'react-icons/gi'
-import {Cart} from './'
+import {Cart, Search} from './'
 import { Context } from '../context/StateContext'
 
 
 const Navbar = ({ logo }) => {
   const [nav, setNav] = useState(false)
   const useStateContext = useContext(Context)
-  const{showCart, setShowCart, totalQuantities }= useStateContext;
+  const{showCart, setShowCart, totalQuantities, showSearch, setShowSearch }= useStateContext;
 
 
   useEffect(()=>{
@@ -54,11 +54,12 @@ const Navbar = ({ logo }) => {
         <span className='cart-item-qty'>{totalQuantities}</span>
         </button>
         <button className='search-button'>
-        <AiOutlineSearch className='search-nav' />
+        <AiOutlineSearch className='search-nav' onClick={()=> setShowSearch(true)} />
         </button>
         
       </div>
       {showCart && <Cart />} 
+     
     </nav>
   )
 }

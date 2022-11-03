@@ -55,7 +55,7 @@
 .details-container {
     height: 50rem;
     display: flex;
-    padding-top: 10rem;
+    padding-top: 15rem;
     justify-content: center;
 }
 
@@ -137,6 +137,7 @@
     border: 1px solid var(---main_color);
     transition: .4s ease;
     font-weight: 600;
+    height: 100%;
 }
 
 .minus{
@@ -160,7 +161,6 @@
 
 .qty-input{
     border: 1px solid;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

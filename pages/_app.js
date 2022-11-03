@@ -17,16 +17,20 @@ import '../styles/news_details.css'
 import '../styles/about.css'
 import '../styles/contact.css'
 import '../styles/team.css'
+import '../styles/search.css'
 import React from 'react'
 import { Layout } from '../components'
 import { StateContext } from '../context/StateContext'
 import {Toaster} from 'react-hot-toast';
+import { client } from '../lib/client'
 
 function MyApp({ Component, pageProps }) {
 
+  const{products, news}=pageProps;
+
   return (
     <StateContext>
-      <Layout>
+      <Layout products={products}>
         <Toaster />
         <Component {...pageProps} />
       </Layout>
@@ -34,5 +38,19 @@ function MyApp({ Component, pageProps }) {
 
   )
 }
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]'
+  const newsQuery = '*[_type == "news"]'
+  const news = await client.fetch(newsQuery)
+  const products = await client.fetch(query)
+
+  return {
+    props: {
+      products,news
+    }
+  }
+}
+
 
 export default MyApp

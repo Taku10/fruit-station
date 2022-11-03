@@ -15,7 +15,8 @@
 
 html{
   scroll-behavior: smooth;
-  overflow-x: hidden;
+
+
 }
 
  
@@ -28,7 +29,8 @@ footer{
   width: 100%;
   max-height: 500rem;
   position: relative;
-  
+  overflow-y: hidden;
+  overflow-x: hidden;
 
 
 }
@@ -36,7 +38,7 @@ footer{
 
 header {
   position: fixed;
-  z-index: 20;
+  z-index: 12;
 }
 
 
@@ -135,6 +137,10 @@ main {
   transition: .4s ease-in-out;
   cursor: pointer;
   color: #ffffff
+}
+
+.search-nav{
+  font-size: 1.3rem;
 }
 
 .cart-nav:hover,

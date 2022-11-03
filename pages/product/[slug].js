@@ -66,64 +66,6 @@ const ProductDetails = ({ relatedProducts, products }) => {
                     </div>
                 </div>
             </div>
-            <div className='related-products-container'>
-                <div className='related-products-wrapper'>
-                    <div className='related-products-header'>
-                        <div className='header-hr'>
-                        <h1 className=''><span>Related</span> Products</h1>
-                        <hr className='orange-line'/>
-                        </div>
-                        <p className='related-products-desc'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.
-                        </p>
-
-                    </div>
-                </div>
-                <div className='products-slide track'>
-                <div className='fruit-wrapper'>
-                        <Link href={`/product/${relatedProducts[5].slug.current}`}>
-                            <div className='fruit-image'>
-                                <img src={urlFor(relatedProducts[5].image[0])} alt="" />
-                            </div>
-                        </Link>
-                        <div className='fruit-info'>
-                            <h2>{relatedProducts[5].name}</h2>
-                            <div className='price-kg'>
-                                <p>per Kg</p>
-                                <h3>$ {relatedProducts[5].price}</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='fruit-wrapper'>
-                        <Link href={`/product/${relatedProducts[6].slug.current}`}>
-                            <div className='fruit-image'>
-                                <img src={urlFor(relatedProducts[6].image[0])} alt="" />
-                            </div>
-                        </Link>
-                        <div className='fruit-info'>
-                            <h2>{relatedProducts[6].name}</h2>
-                            <div className='price-kg'>
-                                <p>per Kg</p>
-                                <h3>$ {relatedProducts[6].price}</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='fruit-wrapper'>
-                        <Link href={`/product/${relatedProducts[3].slug.current}`}>
-                            <div className='fruit-image'>
-                                <img src={urlFor(relatedProducts[3].image[0])} alt="" />
-                            </div>
-                        </Link>
-                        <div className='fruit-info'>
-                            <h2>{relatedProducts[3].name}</h2>
-                            <div className='price-kg'>
-                                <p>per Kg</p>
-                                <h3>$ {relatedProducts[3].price}</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }

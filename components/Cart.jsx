@@ -3,13 +3,11 @@ import { Context } from '../context/StateContext'
 import { BsArrowLeft } from 'react-icons/bs'
 import { BsBasket } from 'react-icons/bs'
 import Link from 'next/link'
-import { interpolateAs } from 'next/dist/shared/lib/router/router'
 import { urlFor } from '../lib/client'
 import { AiOutlineMinus } from 'react-icons/ai'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { BsTrash } from 'react-icons/bs'
 import getStripe from '../lib/getStripe'
-import { RESPONSE_LIMIT_DEFAULT } from 'next/dist/server/api-utils'
 import toast from 'react-hot-toast'
 
 const Cart = () => {

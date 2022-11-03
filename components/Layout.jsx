@@ -4,15 +4,18 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 import Brands from './Brands'
 import { Context } from '../context/StateContext'
+import Search from './Search'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, products}) => {
 
   const useStateContext = useContext(Context);
-  const { video, setVideo } = useStateContext;
+  const { video, setVideo, showSearch } = useStateContext;
 
   return (
     <div className='layout'>
+      {/* dim background on video click */}
       <div className={`${video ? 'dim active' : 'dim'}`} onClick={() => setVideo(false)}></div>
+      {showSearch && <Search productSearch={products}/>}
       <Head>
         <title>FruitKu </title>
         <link rel="shortcut icon" href="/site-logo.png" />
