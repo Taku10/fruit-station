@@ -99,6 +99,7 @@
     width: 20rem;
     height: 18rem;
     cursor: pointer;
+    object-fit: contain;
 }
 
 .fruit-info{

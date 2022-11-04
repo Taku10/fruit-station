@@ -5,16 +5,19 @@ import Navbar from './Navbar'
 import Brands from './Brands'
 import { Context } from '../context/StateContext'
 import Search from './Search'
+import { motion,useScroll } from 'framer-motion';
 
 const Layout = ({ children, products}) => {
 
   const useStateContext = useContext(Context);
   const { video, setVideo, showSearch } = useStateContext;
+  const { scrollYProgress } = useScroll();
 
   return (
     <div className='layout'>
       {/* dim background on video click */}
       <div className={`${video ? 'dim active' : 'dim'}`} onClick={() => setVideo(false)}></div>
+      <motion.div className="progress-bar"style={{ scaleX: scrollYProgress }}/>
       {showSearch && <Search productSearch={products}/>}
       <Head>
         <title>FruitKu </title>

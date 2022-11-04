@@ -9,7 +9,7 @@ const Product = ({ sort, products: { name, price, image, slug } }) => {
 
 
   return (
-    <motion.div layout>
+    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} layout>
 
       <Link href={`/product/${slug.current}`}>
         <div className='fruit-wrapper'>

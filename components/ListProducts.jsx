@@ -4,7 +4,7 @@ import { client } from '../lib/client'
 import { Product } from '../components';
 import { Context } from '../context/StateContext';
 import ReactPaginate from 'react-paginate';
-import { motion } from 'framer-motion';
+import { motion,useScroll } from 'framer-motion';
 
 
 
@@ -19,7 +19,11 @@ const ListProducts = ({ products }) => {
 
   console.log(currentItems)
 
-
+  const { scrollYProgress } = useScroll();
+  
+ 
+   
+  
   // const filterProduct = (e) => {
   //   let updated = e.target.value;
 
@@ -66,8 +70,11 @@ const ListProducts = ({ products }) => {
     setItemOffset(newOffset);
   };
 
+  
   return (
+    
     <div className='list-products-container'>
+       <motion.div style={{ scaleX: scrollYProgress }} />  
       <div className='list-products-wrapper'>
       <input type="text" placeholder='Search Fruits' onChange={(e) => setSearch(e.target.value)} />
         <motion.div layout className='products-show'>
