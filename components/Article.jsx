@@ -4,12 +4,13 @@ import  { client, urlFor } from '../lib/client'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { MdDateRange } from 'react-icons/md'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
+import { motion } from 'framer-motion'
 
 const Article = ({news}) => {
 
     const{title, image, body1, date, slug}=news
     return (
-        <div className='article'>
+        <motion.div layout className='article'>
             <div className='article-image'>
             <img src={urlFor(image && image[0])} alt="" />
             </div>
@@ -31,7 +32,7 @@ const Article = ({news}) => {
                     <MdOutlineKeyboardArrowRight className='article-arrow-icon' />
                 </div>
             </Link>
-        </div>
+        </motion.div>
     )
 }
 

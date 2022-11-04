@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Article, Search } from '../components'
 import { client } from '../lib/client'
 import ReactPaginate from 'react-paginate';
+import { motion } from 'framer-motion';
 
 const News = ({ news }) => {
     const [search, setSearch] = useState('')
@@ -36,11 +37,11 @@ const News = ({ news }) => {
                 </div>
                 <div className='all-articles-list'>
                     <input type="text" placeholder='Search News' onChange={(e) => setSearch(e.target.value)} />
-                    <div className='all-articles-wrapper'>
+                    <motion.div layout className='all-articles-wrapper'>
                         {currentItems.filter((item) => item.title.toLowerCase().includes(search)).map((item) => (
                             <Article key={item._id} news={item} />
                         ))}
-                    </div>
+                    </motion.div>
                     <ReactPaginate
                         breakLabel="..."
                         nextLabel="Next"
