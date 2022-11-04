@@ -8,9 +8,8 @@
 
 .our-products-container{
     width: 100%;
-    height: 75rem;
+    height: 60rem;
     padding-top: 10rem;
-
 }
 
 .our-products-wrapper{
@@ -70,7 +69,7 @@
 .home-products-wrapper{
     display: grid;
     width: 70%;
-    height: 40rem;
+    height: 30rem;
     grid-template-columns: 1fr 1fr 1fr;
     gap:1rem;
  
@@ -144,7 +143,8 @@
 .add-to-cart{
     display: flex;
     align-items: center;
-    width: 10rem;
+    justify-content: center;
+    width: 9rem;
     gap:.5rem;
     height: 3rem;
     border-radius: 2rem;
@@ -153,6 +153,7 @@
     border: none;
     padding:0rem 1rem;
     transition: .2s ease-in-out;
+    cursor: pointer;
 }
 
 .add-to-cart:hover{
