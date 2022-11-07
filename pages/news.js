@@ -27,7 +27,7 @@ const News = ({ news }) => {
     }
 
     return (
-        <>        
+        <>
             <div className='allNews-container'>
                 <div className='allNews-start-container'>
                     <div className='allNews-start-header'>

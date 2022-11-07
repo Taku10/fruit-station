@@ -183,21 +183,21 @@
         padding: 0rem 10rem;
     }
 
-    .our-products-container{
+    .our-products-container {
         height: 120rem;
     }
 
-    .home-products-wrapper{
+    .home-products-wrapper {
         display: flex;
         flex-flow: row wrap;
     }
 
-    .home-fruit-wrapper{
+    .home-fruit-wrapper {
         height: 33rem;
         width: 100%;
     }
 
-    
+
 }
 
 @media (max-width: 768px) {
@@ -209,27 +209,27 @@
 
 @media (max-width: 500px) {
 
-    .home-products-wrapper{
+    .home-products-wrapper {
         height: 100%;
         width: 90%;
-      
+
     }
 
     .our-products-header {
         padding: 0rem 2rem;
-        
+
 
     }
 
-    .header-hr h1{
+    .header-hr h1 {
         margin-top: 2rem;
     }
 
-    .home-fruit-wrapper{
+    .home-fruit-wrapper {
         width: 80rem;
     }
 
-    .home-fruit-wrapper img{
+    .home-fruit-wrapper img {
         object-fit: 100%;
     }
 

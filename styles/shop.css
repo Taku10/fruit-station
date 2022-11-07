@@ -51,7 +51,7 @@
 
 .list-products-container{
   width: 100%;
-  max-height: 150rem;
+  max-height: 1500rem;
   padding-top: 9rem;
 }
 
@@ -61,6 +61,7 @@
   flex-direction: column;
   align-items: center;
   gap:6rem;
+  border: 1px solid;
  
 }
 
@@ -123,6 +124,8 @@
   color: rgb(80, 77, 77);
 }
 
+
+
 .products-show{
   display: grid;
     width: 80%;
@@ -130,6 +133,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     gap:2rem;
+    place-content: center;
     
 }
 
@@ -194,3 +198,41 @@
  .pagination .active{
  background-color: var(---main_color);
 }
+
+@media (max-width:992px) {
+
+  .fruit-wrapper{
+    width: 100%;
+  }
+
+  .products-show{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    border: 1px solid;
+  }
+
+  
+}
+
+@media (max-width:768px) {
+
+.products-show{
+  width: 100%;
+}
+
+
+
+ 
+}
+
+@media (max-width:700px) {
+
+  .motion-fruit-div{
+    width: 95%;
+  }
+  
+  
+  
+   
+  }
