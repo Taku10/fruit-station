@@ -5,85 +5,86 @@
     ---sec_color: #051922
 }
 
-.history-container{
-display: flex;
-flex-direction: column;
-align-items: center;
-padding:4rem 0rem;
-height: 25rem;
-width: 100%;
+.history-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0rem;
+    height: 25rem;
+    width: 100%;
 
 }
 
-.history-wrapper{
+.history-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
-    width:80%;
+    width: 80%;
 }
 
-.history-left{
+.history-left {
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: url('../images/fruit-basket.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    border-top-right-radius:1rem ;
-    border-bottom-left-radius:1rem ;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 
-.dim{
+.dim {
     z-index: 13;
-    height: 100%;   
+    height: 100%;
     width: 100%;
-    position: absolute; 
+    position: absolute;
     display: none;
-    
-  }
 
-  .dim.active{
+}
+
+.dim.active {
     display: block;
-    background-color: rgba(0,0,0,0.8);
-    transition: 1s ease;  
-  }
-  
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 1s ease;
+}
 
-.play-icon-wrapper{
+
+.play-icon-wrapper {
     color: var(---sec_color);
     background-color: #f28123;
     width: 5rem;
     height: 5rem;
-    border-radius:50% ;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0px 0px 18px 2px rgb(255, 249, 249,0.8);
+    box-shadow: 0px 0px 18px 2px rgb(255, 249, 249, 0.8);
     transition: .4s ease;
 }
 
-.play-icon{
+.play-icon {
     font-size: 20px;
 }
-.play-icon-wrapper:hover{
-color: var(---main_color);
-background-color: var(---sec_color);
+
+.play-icon-wrapper:hover {
+    color: var(---main_color);
+    background-color: var(---sec_color);
 }
 
-.video-wrapper{
+.video-wrapper {
     position: absolute;
-    height:30rem;
-    width:50%;
+    height: 30rem;
+    width: 50%;
     z-index: 14;
     margin-left: 10rem;
-    margin-top:-5rem;
+    margin-top: -5rem;
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 1rem;
 }
 
-.close-video{
+.close-video {
     align-self: flex-end;
     font-size: 1.5rem;
     cursor: pointer;
@@ -92,57 +93,58 @@ background-color: var(---sec_color);
 }
 
 @keyframes close-anim {
-    from{
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
 
-.history-right{
+.history-right {
     padding: 2rem 4rem;
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 1rem;
 }
 
-.since-year{
+.since-year {
     font-size: 15px;
     font-weight: 400;
     font-family: var(---open);
     color: var(---open);
 }
 
-.we-are-fruitku{
+.we-are-fruitku {
     font-family: var(---poppins);
     font-weight: 700;
     font-size: 42px;
     color: var(---sec_color);
 }
 
-.we-are-fruitku span{
+.we-are-fruitku span {
     color: var(---main_color);
 }
 
-.history-story{
+.history-story {
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 1rem;
     font-family: var(---open);
     font-weight: 400;
     font-size: 15px;
     color: var(---sec_color);
 }
 
-.history-button{
+.history-button {
     width: 8rem;
     height: 3rem;
     border-radius: 2rem;
     color: white;
     background-color: var(---main_color);
     border: none;
-    padding:0rem 1rem;
+    padding: 0rem 1rem;
     transition: .2s ease-in-out;
     cursor: pointer;
     font-family: var(---poppins);
@@ -150,7 +152,38 @@ background-color: var(---sec_color);
     font-size: 14px;
 }
 
-.history-button:hover{
+.history-button:hover {
     background-color: var(---sec_color);
-    color:var(---main_color)
+    color: var(---main_color)
+}
+
+@media (max-width:992px) {
+    
+    .history-container {
+        height: 60rem;
+        width: 100%;
+    }
+    
+    .history-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+        width: 80%;
+    }
+
+    .history-left{
+        width: 100%;
+        height: 25rem;
+    }
+}
+
+@media (max-width:768px) {
+   
+    .history-wrapper{
+        width: 100%;
+    }
+
+    .history-right{
+        padding: 2rem 2rem;
+    }
 }

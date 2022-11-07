@@ -13,24 +13,25 @@
   ---sec_color: #051922
 }
 
-html{
+html {
   scroll-behavior: smooth;
 
 
 }
 
- 
-footer{
+
+footer {
   max-height: 60rem;
 }
 
 
 .layout {
   width: 100%;
-  max-height: 500rem;
+  max-height: 5000rem;
   position: relative;
   overflow-y: hidden;
   overflow-x: hidden;
+
 
 
 }
@@ -44,9 +45,10 @@ header {
 
 
 main {
-  max-height: 500rem;
+  height: 100%;
   width: 100%;
- margin-bottom: 10rem;
+  margin-bottom: 10rem;
+ 
 }
 
 .navbar-container {
@@ -57,9 +59,9 @@ main {
   align-items: center;
   padding: 2rem 0rem;
   position: fixed;
-  margin-top:2rem;
+  margin-top: 2rem;
   transition: .1s ease;
-  
+
 
 }
 
@@ -67,12 +69,12 @@ main {
 .navbar-container.active {
   background-color: var(---sec_color);
   position: fixed;
-  margin-top:0rem;
-  
+  margin-top: 0rem;
+
 }
 
-.navbar-container.active > .cart-container{
-  margin-top:2rem
+.navbar-container.active>.cart-container {
+  margin-top: 2rem
 }
 
 
@@ -84,7 +86,7 @@ main {
   cursor: pointer;
   color: var(---main_color);
   font-family: var(---open);
-  
+
 }
 
 
@@ -93,7 +95,7 @@ main {
   font-weight: 700;
 }
 
-.logo-text{
+.logo-text {
   font-size: 1.8rem;
   font-weight: 700;
 }
@@ -102,6 +104,10 @@ main {
   display: flex;
   justify-content: space-between;
   width: 30%;
+}
+
+.nav-items-mobile{
+  display: none;
 }
 
 .nav-items li {
@@ -121,7 +127,13 @@ main {
   color: var(---main_color)
 }
 
+.hamburger-menu{
+  display: none;
+}
 
+.close-menu{
+  display: none;
+}
 
 .cart-search-nav {
   display: flex;
@@ -139,7 +151,7 @@ main {
   color: #ffffff
 }
 
-.search-nav{
+.search-nav {
   font-size: 1.3rem;
 }
 
@@ -148,7 +160,8 @@ main {
   color: var(---main_color)
 }
 
-.cart-button, .search-button{
+.cart-button,
+.search-button {
   display: flex;
   align-items: center;
   position: relative;
@@ -156,11 +169,11 @@ main {
   background-color: transparent;
 }
 
-.cart-item-qty{
+.cart-item-qty {
   position: absolute;
   right: -17px;
   font-family: var(---open);
-  top:-8px;
+  top: -8px;
   font-size: 12px;
   color: #eee;
   background-color: var(---main_color);
@@ -172,7 +185,7 @@ main {
 }
 
 
-.progress-bar{
+.progress-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -181,4 +194,138 @@ main {
   background: var(---main_color);
   transform-origin: 0%;
   z-index: 14;
+}
+
+
+@media (max-width:1300px) {
+
+  .nav-items {
+    width: 40%;
+  }
+}
+
+@media (max-width:992px) {
+
+
+  header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .navbar-container{
+    width: 80%;
+    justify-content: space-between;
+  }
+
+  .navbar-container.active {
+    
+    position: static;
+    margin-top: 0rem;
+  
+  }
+
+  .cart-container{
+    margin-right:-6rem ;
+    position: fixed;
+  }
+  
+  
+
+  .nav-items{
+    display: none;
+  }
+  
+  .nav-items-mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: var(---sec_color);
+    position: absolute;
+    height: 55vh;
+    width: 100%;
+    top:6rem;
+    padding: 2rem 0rem;
+    animation: hamburger .5s ease-in;
+  }
+
+
+  @keyframes hamburger {
+    from{
+      opacity: 0;
+      transform: translateY(-10rem);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0rem);
+    }
+  }
+
+  .nav-items-mobile li{
+    margin-left: 2rem;
+    margin-right:2rem ;
+    border-bottom:1px solid;
+    padding: 1.9rem 0rem;
+  }
+
+  .nav-items-mobile li {
+    list-style: none;
+  }
+  
+  .nav-items-mobile li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-family: var(---open);
+    font-weight: 700;
+    transition: .4s ease-in-out;
+    color: #ffffff
+  }
+  
+  .nav-items-mobile li a:hover {
+    color: var(---main_color)
+  }
+  
+
+  .hamburger-menu{
+    color:var(---sec_color);
+    background-color: var(---main_color);
+    padding: .5rem .5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: block;
+    transition: 1s ease;
+  }
+
+  .close-menu{
+    color:var(---sec_color);
+    background-color: var(---main_color);
+    padding: .5rem .5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: block;
+    transition: 1s ease;
+    display: block;
+  }
+
+  .cart-search-nav{
+    width: 15%;
+  }
+
+}
+
+@media (max-width:768px) {
+  
+  .cart-search-nav{
+    width: 15%;
+  }
+
+
+}
+
+@media (max-width:500px) {
+  
+  .cart-search-nav{
+    width: 30%;
+  }
+
 }

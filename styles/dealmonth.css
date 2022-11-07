@@ -125,3 +125,52 @@
     flex-direction: column;
    align-items: center; 
   }
+
+
+  @media (max-width:1200px) {
+    .deal-month-wrapper{
+      gap:4rem
+    }
+
+  }
+
+  @media (max-width:992px) {
+    .deal-month-container{
+      height: 60rem;
+    }
+
+    .deal-month-wrapper{
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .deal-image{
+      height: 35rem;
+      display: flex;
+      justify-items: center;
+      width: 100%;
+
+    }
+
+    .deal-image img{
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width:500px) {
+
+      .deal-month-wrapper{
+        width: 95%;
+      }
+
+      .number{
+        font-size: 20px;
+      }
+
+      .days, .hours, .mins, .secs{
+        width: 5rem;
+      }
+
+      
+    }
+  }

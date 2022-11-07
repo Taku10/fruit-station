@@ -21,7 +21,7 @@ const OurProducts = ({ products }) => {
                     </p>
                 </div>
                 <div className='home-products-wrapper'>
-                    <div className='fruit-wrapper'>
+                    <div className='home-fruit-wrapper'>
                         <Link href={`/product/${products[0].slug.current}`}>
                             <div className='fruit-image'>
                                 <img src={urlFor(products[0].image[0])} alt="" />
@@ -35,7 +35,7 @@ const OurProducts = ({ products }) => {
                             </div>
                         </div>
                     </div>
-                    <div className='fruit-wrapper'>
+                    <div className='home-fruit-wrapper'>
                         <Link href={`/product/${products[1].slug.current}`}>
                             <div className='fruit-image'>
                                 <img src={urlFor(products[1].image[0])} alt="" />
@@ -49,7 +49,7 @@ const OurProducts = ({ products }) => {
                             </div>
                         </div>
                     </div>
-                    <div className='fruit-wrapper'>
+                    <div className='home-fruit-wrapper'>
                         <Link href={`/product/${products[2].slug.current}`}>
                             <div className='fruit-image'>
                                 <img src={urlFor(products[2].image[0])} alt="" />

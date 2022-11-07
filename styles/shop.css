@@ -133,6 +133,34 @@
     
 }
 
+
+
+.fruit-wrapper {
+  height: 100%;
+  box-shadow: 1px 2px 10px -3px;
+  transition: .3s ease-in;
+  cursor: pointer;
+}
+
+.fruit-wrapper:hover {
+  box-shadow: none;
+}
+
+.fruit-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+
+}
+
+.fruit-wrapper img {
+  width: 20rem;
+  height: 18rem;
+  cursor: pointer;
+  object-fit: contain;
+}
+
 .pagination{
   display: flex;
   gap:2rem;

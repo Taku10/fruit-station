@@ -4,6 +4,8 @@ import fruit_logo from '../images/fruit-logo.png'
 import Image from 'next/image'
 import { BsFillCartFill } from 'react-icons/bs'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlineClose } from 'react-icons/ai'
+import { GiHamburgerMenu} from 'react-icons/gi'
 import { GiFruitBowl } from 'react-icons/gi'
 import {Cart, Search} from './'
 import { Context } from '../context/StateContext'
@@ -12,6 +14,7 @@ import { Context } from '../context/StateContext'
 const Navbar = ({ logo }) => {
   const [nav, setNav] = useState(false)
   const useStateContext = useContext(Context)
+  const[menu, setMenu] = useState(false)
   const{showCart, setShowCart, totalQuantities, showSearch, setShowSearch }= useStateContext;
 
 
@@ -48,16 +51,24 @@ const Navbar = ({ logo }) => {
         <li><Link href='/about'>About</Link></li>
         <li><Link href='/contact'>Contact</Link></li>
       </ul>
+
+      { menu && <ul className='nav-items-mobile'>
+        <li><Link href='/'>Home</Link></li>
+        <li><Link href='/shop'>Shop</Link></li>
+        <li><Link href='/news'>News</Link></li>
+        <li><Link href='/about'>About</Link></li>
+        <li><Link href='/contact'>Contact</Link></li>
+      </ul>
+      }
       <div className='cart-search-nav'>
         <button className='cart-button' onClick={()=> setShowCart(true)}>
           <BsFillCartFill className='cart-nav' />
         <span className='cart-item-qty'>{totalQuantities}</span>
         </button>
-        <button className='search-button'>
-        <AiOutlineSearch className='search-nav' onClick={()=> setShowSearch(true)} />
-        </button>
-        
+       {!menu ? <GiHamburgerMenu className='hamburger-menu' onClick={()=>setMenu(true)}/>: <AiOutlineClose className='close-menu' onClick={()=>setMenu(false)} />}
+      
       </div>
+     
       {showCart && <Cart />} 
      
     </nav>

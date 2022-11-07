@@ -15,7 +15,7 @@ const Testimonials = () => {
                         <h2 className='customer-name'>Lance Bolton</h2>
                         <h3 className='customer-job'>Local Shop Owner</h3>
                         <p className='customer-message'>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus libero fugiat sequi cupiditate, recusandae debitis dolorum quod, sunt accusamus, accusantium similique asperiores fugit iure sit non autem aliquid quas modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, eligendi repellat illo sunt maxime nobis quam esse modi quibusdam voluptas consectetur praesentium minima atque eveniet perspiciatis cupiditate assumenda dolorum fugiat!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus libero fugiat sequi cupiditate, recusandae debitis dolorum quod, sunt accusamus, accusantium similique asperiores fugit iure sit non autem aliquid quas modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, 
                         </p>
                         <FaQuoteRight className='quote'/>
                     </div>
@@ -23,7 +23,7 @@ const Testimonials = () => {
                         <h2 className='customer-name'>Sarah Smith</h2>
                         <h3 className='customer-job'>Local Shop Owner</h3>
                         <p className='customer-message'>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus libero fugiat sequi cupiditate, recusandae debitis dolorum quod, sunt accusamus, accusantium similique asperiores fugit iure sit non autem aliquid quas modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, eligendi repellat illo sunt maxime nobis quam esse modi quibusdam voluptas consectetur praesentium minima atque eveniet perspiciatis cupiditate assumenda dolorum fugiat!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus libero fugiat sequi cupiditate, recusandae debitis dolorum quod, sunt accusamus, accusantium similique asperiores fugit iure sit non autem aliquid quas modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, 
                         </p>
                         <FaQuoteRight className='quote'/>
                     </div>
@@ -31,7 +31,7 @@ const Testimonials = () => {
                         <h2 className='customer-name'>Vince Minter</h2>
                         <h3 className='customer-job'>Local Shop Owner</h3>
                         <p className='customer-message'>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus libero fugiat sequi cupiditate, recusandae debitis dolorum quod, sunt accusamus, accusantium similique asperiores fugit iure sit non autem aliquid quas modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, eligendi repellat illo sunt maxime nobis quam esse modi quibusdam voluptas consectetur praesentium minima atque eveniet perspiciatis cupiditate assumenda dolorum fugiat!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus libero fugiat sequi cupiditate, recusandae debitis dolorum quod, sunt accusamus, accusantium similique asperiores fugit iure sit non autem aliquid quas modi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, 
                         </p>
                         <FaQuoteRight className='quote'/>
                     </div>
