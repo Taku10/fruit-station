@@ -11,7 +11,7 @@ const Contact = () => {
     email:'',
     phone:'',
     subject:'',
-    message:''
+    message:'',
   })
 
   const handleChange = (event)=>{
@@ -20,14 +20,14 @@ const Contact = () => {
     setContact((prev)=>{
       return{
         ...prev,
-        [name]: value
+        [name]: value,
       }
     })
   }
 
   const handleSubmit=(event)=>{
     event.preventDefault()
-    setContact('')
+
     console.log(name, message)
 
   }
@@ -50,7 +50,7 @@ const Contact = () => {
           </p>
           <form className='contact-form' onSubmit={handleSubmit}>
             <div className='contact-fullName'>
-              <input type="text" placeholder='Name' value={name} name='name' onChange={handleChange}  />
+              <input type="text" value={name} name='name' onChange={handleChange}  placeholder="Name" />
               <input type="email" placeholder='Email' value={email} name='email' onChange={handleChange} />
             </div>
             <div className='contact-phone-subject'>

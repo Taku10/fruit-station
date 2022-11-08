@@ -132,6 +132,10 @@ gap:1rem;
   font-weight: 700;
   cursor: pointer;
 }
+.contact-form::placeholder{
+
+  color:red;
+}
 
 .contact-form button:hover{
   background-color: var(---sec_color);
@@ -210,3 +214,25 @@ gap:1rem;
   border:  1px solid;
 }
 
+@media (max-width:992px) {
+  
+  .contact-container{
+    border: 1px solid;
+  }
+
+  .contact-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    gap:2rem;
+  }
+
+  .contact-grid-right{
+    width: 100%;
+  }
+
+  .contact-fullName, .contact-phone-subject{
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+}
