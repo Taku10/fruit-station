@@ -29,11 +29,71 @@
 
   .brand{
     height: 12rem;
+    display: flex;
+    justify-content:center;
+    padding: 0rem 5rem;
   }
 
   .brand img{
     width: 12rem;
     height: 100%;
+    object-fit: contain;
 
   }
+
+  .brands-container .laptop-brand{
+    display: none;
+  }
+
+  .brands-container .tablet-brand{
+    display: none;
+  }
+
+  .brands-container .phone-brand{
+    display: none;
+  }
   
+
+  @media (max-width:992px) {
+
+    .brands-container .desktop-brand{
+      display: none;
+    }
+    
+    .brands-container .laptop-brand{
+      display: block;
+    }
+
+
+
+  }
+
+  @media (max-width:700px) {
+
+    .brands-container .laptop-brand{
+      display: none;
+    }
+    
+    .brands-container .tablet-brand{
+      display: block;
+    }
+
+
+
+  }
+
+
+  @media (max-width:500px) {
+
+    .brands-container .tablet-brand{
+      display: none;
+    }
+    
+    .brands-container .phone-brand{
+      display: block;
+    }
+
+
+
+  }
+

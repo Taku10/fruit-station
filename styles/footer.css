@@ -134,3 +134,27 @@
     padding: 0rem 1rem;
     color:white;
 }
+
+@media (max-width:992px) {
+    .footer-container{
+        height: 60rem;
+    }
+
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        height: 50rem;
+       
+    }
+}
+
+@media (max-width:500px) {
+
+.footer-container{
+    height: 70rem;
+}
+
+.footer-content{
+    height: 52rem;
+}
+}

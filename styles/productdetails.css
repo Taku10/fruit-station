@@ -57,6 +57,7 @@
     display: flex;
     padding-top: 15rem;
     justify-content: center;
+    border: 1px solid
 }
 
 .details-wrapper {
@@ -70,9 +71,9 @@
 .product-image {
     display: flex;
     justify-content: center;
-    width: 100%;
+
     height: 27rem;
-    width: 35rem;
+    width: 90%;
     box-shadow: 1px 2px 10px -3px;
     transition: .6s ease-in;
 }
@@ -215,55 +216,54 @@
 }
 
 
-/* relates products starts here************************ */
+@media (max-width:1300px) {
+    .product-image {
+        display: flex;
+        justify-content: center;
+        width:80%;
+        height: 25rem;
+        box-shadow: 1px 2px 10px -3px;
+        transition: .6s ease-in;
+    }
 
-.related-products-container{ 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:6rem;
-    width: 100%;
-    overflow-x: hidden ;
-    border: 1px solid;
-    max-height: 100%;
-    
+    .product-image img{
+        width: 20rem;
+        height: 25rem;
+    }
+}
+
+.product-image{
+    width: 70%;
+    height: 20rem;
+
+}
+
+.product-image img{
+    width: 15rem;
+    height: 20rem;
 }
 
 
-.related-products-desc{
-    text-align: center;
-    font-size: 15px;
-    font-weight: 400;
-    color: #555555;
-    font-family: var(---open);
+@media (max-width:768px) {
+
+
+    .details-container{
+        height: 60rem;
+    }
+
+    .details-wrapper{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .product-image{
+        width: 100%;
+        height: 27rem;
+    }
+
+    .product-image img {
+        width: 100%;
+    }
 }
-
-.products-slide{
-    display: flex;
-    height: 40rem;
-    overflow-x: none;
-    gap:2rem;
-    justify-content: center;
-
-        
-}
-
-.track{
-    animation: marquee 8s linear infinite;
-  width: 80%;
-}
-
-.track {
-    white-space: nowrap;
-    will-change: transform;
-    animation: productSlide 14s linear infinite;
-    width: 80%;
-   
-  }
-  .track:hover {
-    animation-play-state: paused;
-  }
-  @keyframes productSlide {
-    from { transform: translateX(0); }
-    to { transform: translateX(0%); }
-  }

@@ -3,6 +3,7 @@ import { Context } from '../context/StateContext'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaPlay } from 'react-icons/fa'
 import fruit_basket from '../images/fruit-basket.jpg';
+import Link from 'next/link';
 
 
 const Video = () => {
@@ -38,7 +39,9 @@ const Video = () => {
                         </p>
 
                     </div>
+                    <Link href='/about'>
                     <button className='history-button'>Know More</button>
+                    </Link>
                 </div>
             </div>
         </div>
