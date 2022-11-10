@@ -68,8 +68,7 @@ const Navbar = ({ logo }) => {
        {!menu ? <GiHamburgerMenu className='hamburger-menu' onClick={()=>setMenu(true)}/>: <AiOutlineClose className='close-menu' onClick={()=>setMenu(false)} />}
       
       </div>
-     
-      {showCart && <Cart />} 
+   
      
     </nav>
   )

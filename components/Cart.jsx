@@ -27,27 +27,27 @@ const Cart = () => {
     window.addEventListener('scroll', changeNav);
   })
 
-  const handleCheckout =async()=>{
+  const handleCheckout = async () => {
     const stripe = await getStripe();
 
-// make api request
+    // make api request
     const response = await fetch('/api/stripe', {
-      method:'POST',
-      headers:{
+      method: 'POST',
+      headers: {
         'Content-Type': 'application/json',
       },
-      body:JSON.stringify(cartItems),
+      body: JSON.stringify(cartItems),
     });
-    
- 
-    if(response.statusCode === 500) return;
+
+
+    if (response.statusCode === 500) return;
 
     const data = await response.json();
     console.log(data.id)
 
     toast.loading('Redirecting...');
 
-    stripe.redirectToCheckout({sessionId: data.id});
+    stripe.redirectToCheckout({ sessionId: data.id });
   }
 
 
@@ -55,11 +55,14 @@ const Cart = () => {
   return (
     <div className={`${showCart ? 'cart-container anim' : 'cart-container'}`}>
       <div className='cart-wrapper'>
-        <button className='cart-back-button' onClick={() => setShowCart(false)}>
-          <BsArrowLeft />
-          <p>Your Cart </p>
-          <p>({totalQuantities} items)</p>
-        </button>
+        <div className='cart-top-info'>
+          <BsArrowLeft  onClick={() => setShowCart(false)} className='back-button'/>
+          <div className='cart-qty-top'>
+            <p>Your Cart </p>
+            <p className='qty-number-top'>({totalQuantities} items)</p>
+          </div>
+
+        </div>
 
         {cartItems.length < 1 && (
           <div className='empty-cart'>
@@ -81,11 +84,11 @@ const Cart = () => {
                 </div>
                 <div className='name-qty'>
                   <h1>{item.name}</h1>
-                  <BsTrash className='delete-product' onClick={()=> onRemove(item)} />
+                  <BsTrash className='delete-product' onClick={() => onRemove(item)} />
                   <div className='enter-qty'>
-                    <button className='minus' onClick={()=>toggleCartItemQuantity(item._id, 'dec')}><AiOutlineMinus /></button>
+                    <button className='minus' onClick={() => toggleCartItemQuantity(item._id, 'dec')}><AiOutlineMinus /></button>
                     <p className='qty-input'>{item.quantity}</p>
-                    <button className='plus' onClick={()=>toggleCartItemQuantity(item._id, 'inc')}><AiOutlinePlus /></button>
+                    <button className='plus' onClick={() => toggleCartItemQuantity(item._id, 'inc')}><AiOutlinePlus /></button>
                   </div>
                 </div>
 
@@ -93,7 +96,7 @@ const Cart = () => {
               </div>
               <div className='cart-right'>
                 <p className='cart-price'>$ {item.price}</p>
-                
+
               </div>
             </div>
           ))}
@@ -101,8 +104,8 @@ const Cart = () => {
           {cartItems.length >= 1 && (
             <div className='cart-bottom'>
               <div className='total'>
-                <h3>Subtotal:</h3>
-                <h3>$ {totalPrice}</h3>
+                <h3 className='subtotal'>Subtotal:</h3>
+                <h3 className='subtotal-number'>$ {totalPrice}</h3>
               </div>
               <div className='proceed-checkout'>
                 <button onClick={handleCheckout}>Proceed to Checkout</button>

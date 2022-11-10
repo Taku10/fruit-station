@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import Brands from './Brands'
+import Cart from './Cart'
 import { Context } from '../context/StateContext'
 import Search from './Search'
 import { motion,useScroll } from 'framer-motion';
@@ -10,7 +11,7 @@ import { motion,useScroll } from 'framer-motion';
 const Layout = ({ children, products}) => {
 
   const useStateContext = useContext(Context);
-  const { video, setVideo, showSearch } = useStateContext;
+  const { video, setVideo, showSearch ,showCart} = useStateContext;
   const { scrollYProgress } = useScroll();
 
   return (
@@ -18,7 +19,8 @@ const Layout = ({ children, products}) => {
       {/* dim background on video click */}
       <div className={`${video ? 'dim active' : 'dim'}`} onClick={() => setVideo(false)}></div>
       <motion.div className="progress-bar"style={{ scaleX: scrollYProgress }}/>
-      {showSearch && <Search productSearch={products}/>}
+        
+      {showCart && <Cart />} 
       <Head>
         <title>FruitKu </title>
         <link rel="shortcut icon" href="/site-logo.png" />

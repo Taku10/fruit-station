@@ -18,6 +18,7 @@ import '../styles/about.css'
 import '../styles/contact.css'
 import '../styles/team.css'
 import '../styles/search.css'
+import 'aos/dist/aos.css';
 import React from 'react'
 import { Layout } from '../components'
 import { StateContext } from '../context/StateContext'

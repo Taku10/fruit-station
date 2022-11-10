@@ -1,4 +1,4 @@
-import React,{useContext} from 'react'
+import React,{useContext, useEffect} from 'react'
 import { client, urlFor } from '../../lib/client'
 import { BsFillCartFill } from 'react-icons/bs'
 import { GrFacebookOption } from 'react-icons/gr'
@@ -10,6 +10,8 @@ import { AiOutlinePlus} from 'react-icons/ai'
 import Link from 'next/link'
 import {Product} from '../../components'
 import {Context} from '../../context/StateContext'
+import Aos from 'aos';
+
 
 const ProductDetails = ({ relatedProducts, products }) => {
 
@@ -17,21 +19,26 @@ const ProductDetails = ({ relatedProducts, products }) => {
     const useStateContext = useContext(Context)
     const{qty, decreaseQty, increaseQty, onAdd}= useStateContext;
 
+    useEffect(()=>{
+        Aos.init({duration:1500, once: true})
+    },[])
+
+
     return (
 
         <div className='product-details-container'>
             <div className='product-start-container'>
                 <div className='product-start-header'>
-                    <p>SEE MORE DETAILS</p>
-                    <h1>{name}</h1>
+                    <p data-aos = 'fade-down' data-aos-delay='300'>SEE MORE DETAILS</p>
+                    <h1 data-aos = 'fade-up' data-aos-delay='600'>{name}</h1>
                 </div>
             </div>
             <div className='details-container'>
                 <div className='details-wrapper'>
-                    <div className='product-image'>
+                    <div className='product-image' data-aos = 'fade-right' data-aos-delay='500'>
                         <img src={urlFor(image && image[0])} />
                     </div>
-                    <div className='product-info'>
+                    <div className='product-info' data-aos = 'fade-left' data-aos-delay='800'>
                         <h1 className='product-name'>{name}</h1>
                         <p className='kg'>Per Kg</p>
                         <h1 className='product-price'>$ {price}</h1>

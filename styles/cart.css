@@ -7,13 +7,17 @@
 
 .cart-container {
   background-color: white;
-  position: absolute;
+  position: fixed;
   right: 0;
   height: 100vh;
-  width: 50%;
-  top: -2rem;
+  width: 100%;
+  top: 0;
   transition: .1s ease;
   border-left:8px solid var(---main_color);
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+
 }
 
 .cart-container.anim{
@@ -41,10 +45,12 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  width: 80%;
+  overflow: hidden;
 }
 
 
-.cart-back-button {
+.cart-top-info {
   display: flex;
   flex-direction: row;
   border: none;
@@ -54,19 +60,40 @@
   width: 15rem;
   height: 3rem;
   gap: 1rem;
+  justify-content: space-between;
   align-items: center;
-  cursor: pointer
+
+  width: 50%;
+
 }
 
-.cart-back-button p {
+.back-button{
+  cursor: pointer;
+  font-size:2.5rem;
+  transition: .5s ease;
+}
+
+.back-button:hover{
+  transform: scale(1.1);
+  color: var(---main_color);
+}
+
+.cart-qty-top{
+ display: flex;
+ gap:1rem
+}
+
+.cart-qty-top p{
   font-size: 15px;
   font-family: var(---poppins);
   font-weight: 400;
+  font-size: 1.5rem;
 }
 
-.cart-back-button p:last-child {
+.cart-qty-top .qty-number-top {
   color: var(---main_color);
   font-weight: 700;
+
 }
 
 .empty-cart {
@@ -103,6 +130,7 @@
   border: none;
   color: white;
   transition: .4s ease-in-out;
+  cursor: pointer;
 }
 
 
@@ -110,6 +138,7 @@
 .continue-shopping-button:hover{
   color: var(---main_color);
   background-color: var(---sec_color);
+  transform: scale(1.1);
 }
 
 .cart-product-container {
@@ -121,12 +150,15 @@
   overflow-y: scroll;
   padding: 0rem 1rem;
   margin-top: 4rem;
+  overflow-x: hidden;
 
 }
 
 .cart-product {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid rgb(209, 206, 206);
+  padding: 1rem 0rem;
 }
 
 .cart-image {
@@ -144,6 +176,7 @@
 .cart-image img {
   width: 7rem;
   height: 8rem;
+  object-fit: contain;
 }
 
 .cart-left {
@@ -171,6 +204,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-right:2rem ;
 }
 
 .cart-price {
@@ -208,21 +242,30 @@
   display: flex;
   flex-direction: column;
   gap:2rem;
+  margin-right: 4rem;
 }
 
 .total{
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-top:3rem;
   color:var(---sec_color);
   font-family: var(---poppins);
+  gap: 2rem;
+ 
   
 }
 
 .total h3{
   font-weight: 700;
+  font-size: 2rem;
+
 }
+
+
+
+
 
 .proceed-checkout{
   display: flex;
@@ -233,7 +276,7 @@ margin-bottom:2rem;
 }
 
 .proceed-checkout button{
-  background-color: rgb(86, 218, 86);
+  background-color: var(---main_color);
   width: 17rem;
   border:none;
   height: 2.5rem;
@@ -245,6 +288,13 @@ margin-bottom:2rem;
   color: white;
   transition: .4s ease-in-out;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.proceed-checkout button:hover{
+  color:var(---main_color);
+  background-color: var(---sec_color);
+  transform: scale(1.1);
 }
 
 
