@@ -11,14 +11,14 @@ import { motion,useScroll } from 'framer-motion';
 const Layout = ({ children, products}) => {
 
   const useStateContext = useContext(Context);
-  const { video, setVideo, showSearch ,showCart} = useStateContext;
+  const { video, setVideo, showSearch ,showCart, menu, setMenu} = useStateContext;
   const { scrollYProgress } = useScroll();
 
   return (
 
     <>
 
-    <div className='layout'>
+    <div className='layout' >
       {/* dim background on video click */}
       <div className={`${video ? 'dim active' : 'dim'}`} onClick={() => setVideo(false)}></div>
       <motion.div className="progress-bar"style={{ scaleX: scrollYProgress }}/>
@@ -31,7 +31,7 @@ const Layout = ({ children, products}) => {
       <header>
         <Navbar />
       </header>
-      <main>
+      <main onClick={()=> setMenu(false)}>
         {children}
       </main>
       <footer>

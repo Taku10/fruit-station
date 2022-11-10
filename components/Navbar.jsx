@@ -14,10 +14,9 @@ import { Context } from '../context/StateContext'
 const Navbar = ({ logo }) => {
   const [nav, setNav] = useState(false)
   const useStateContext = useContext(Context)
-  const[menu, setMenu] = useState(false)
-  const{showCart, setShowCart, totalQuantities, showSearch, setShowSearch }= useStateContext;
+  const{showCart, setShowCart, totalQuantities, showSearch, setShowSearch ,menu, setMenu}= useStateContext;
 
-
+ //navbar background color change on scroll
   useEffect(()=>{
     const changeNav = () => {
       if (window.scrollY >= 1) {
@@ -30,10 +29,13 @@ const Navbar = ({ logo }) => {
     }
     window.addEventListener('scroll', changeNav);
   })
-  //navbar color change on scroll
+ 
  
 
-  
+  //close mobile navbar after clicked link
+  const linkClose= ()=>{
+    setMenu(false)
+  }
 
  
 
@@ -55,11 +57,11 @@ const Navbar = ({ logo }) => {
       </ul>
 
       { menu && <ul className='nav-items-mobile'>
-        <li><Link href='/'>Home</Link></li>
-        <li><Link href='/shop'>Shop</Link></li>
-        <li><Link href='/news'>News</Link></li>
-        <li><Link href='/about'>About</Link></li>
-        <li><Link href='/contact'>Contact</Link></li>
+        <li onClick={linkClose}><Link href='/' >Home</Link></li>
+        <li onClick={linkClose}><Link href='/shop'>Shop</Link></li>
+        <li onClick={linkClose}><Link href='/news'>News</Link></li>
+        <li onClick={linkClose}><Link href='/about'>About</Link></li>
+        <li onClick={linkClose}><Link href='/contact'>Contact</Link></li>
       </ul>
       }
       <div className='cart-search-nav'>
