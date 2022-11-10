@@ -53,7 +53,7 @@ const Cart = () => {
 
 
   return (
-    <div className={`${showCart ? 'cart-container anim' : 'cart-container'}`}>
+    <div className={`${showCart ? 'cart-container anim' : 'cart-container animBack'}`}>
       <div className='cart-wrapper'>
         <div className='cart-top-info'>
           <div  className='back-button'  onClick={() => setShowCart(false)}>

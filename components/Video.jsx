@@ -20,7 +20,7 @@ const Video = () => {
     const videoPlayer = (
         <div className='video-wrapper' role='button' >
             <AiOutlineClose className='close-video' onClick={() => setVideo(false)}/>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     )
 

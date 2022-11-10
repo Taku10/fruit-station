@@ -23,8 +23,12 @@
 
 .cart-container.anim{
   opacity: 1;
-  animation: anim .7s ease;
+  animation: anim .9s ease;
 
+}
+
+.cart-container .animBack{
+  animation: animBack .9s ease;
 }
 
 @keyframes anim {
@@ -35,6 +39,17 @@
   to{
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+@keyframes animBack {
+  from{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to{
+    opacity: 0;
+    transform: translateX(100px);
   }
 }
 

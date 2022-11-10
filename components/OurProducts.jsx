@@ -4,6 +4,8 @@ import { urlFor } from '../lib/client'
 import Link from 'next/link'
 import { Context } from '../context/StateContext'
 import Aos from 'aos'
+import { motion } from 'framer-motion'
+
 
 const OurProducts = ({ products }) => {
 

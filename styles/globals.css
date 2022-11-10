@@ -20,6 +20,12 @@ html {
 }
 
 
+.dim-overflow{
+  overflow: hidden;
+}
+
+
+
 footer {
   max-height: 100rem;
 }
@@ -31,10 +37,8 @@ footer {
   position: relative;
   overflow-y: hidden;
   overflow-x: hidden;
-
-
-
 }
+
 
 
 header {
@@ -246,6 +250,7 @@ main {
     top:4.5rem;
     padding: 1rem 0rem;
     animation: hamburger .5s ease-in;
+    border-radius: 1rem;
   }
 
 
@@ -261,7 +266,7 @@ main {
   .nav-items-mobile li{
     margin-left: 2rem;
     margin-right:2rem ;
-    border-bottom:1px solid rgb(102, 100, 100);
+    border-bottom:1px solid rgb(134, 117, 84);
     padding: 1.9rem 0rem;
   }
 
@@ -291,6 +296,7 @@ main {
     cursor: pointer;
     display: block;
     transition: 1s ease;
+    border-radius: .7rem;
   }
 
   .close-menu{
@@ -302,6 +308,7 @@ main {
     display: block;
     transition: 1s ease;
     display: block;
+    border-radius: .7rem;
   }
 
   .cart-search-nav{

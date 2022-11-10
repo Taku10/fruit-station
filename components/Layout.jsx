@@ -15,6 +15,9 @@ const Layout = ({ children, products}) => {
   const { scrollYProgress } = useScroll();
 
   return (
+
+    <>
+
     <div className='layout'>
       {/* dim background on video click */}
       <div className={`${video ? 'dim active' : 'dim'}`} onClick={() => setVideo(false)}></div>
@@ -36,6 +39,7 @@ const Layout = ({ children, products}) => {
         <Footer />
       </footer>
     </div>
+    </>
   )
 }
 

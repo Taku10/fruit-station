@@ -1,10 +1,50 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState, useRef} from 'react'
 import {BsFillCartFill} from 'react-icons/bs'
 import orange_splash from '../images/orange-splash.png'
 import Aos from 'aos'
 
 const DealMonth = () => {
+    const [days, setDays]= useState('00')
+    const [hours, setHours]= useState('00')
+    const [minutes, setMinutes]= useState('00')
+    const [seconds, setSeconds]= useState('00')
 
+    let interval = useRef()
+
+    const startTimer = ()=>{
+        const deadline = new Date('December 03, 2022 00:00:00:00').getTime();
+
+        interval = setInterval(()=>{
+            const now = new Date().getTime();
+            const distance = deadline - now;
+
+            const timerDays = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const timerHours = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
+            const timerMinutes = Math.floor((distance % (1000 * 60 * 60 )) / (1000 * 60));
+            const timerSeconds = Math.floor((distance % (1000 * 60 )) / 1000 );
+            
+            if(distance < 0){
+                clearInterval(interval.current);
+            }else{
+                setDays(timerDays)
+                setHours(timerHours)
+                setMinutes(timerMinutes)
+                setSeconds(timerSeconds)
+            }
+
+
+
+
+        }, 1000)
+    }
+
+    useEffect(()=>{
+        startTimer();
+
+        return()=>{
+            clearInterval(interval.current)
+        };
+    });
 
     return (
         <div className='deal-month-container'>
@@ -26,19 +66,19 @@ const DealMonth = () => {
                     </p>
                     <div className='timer'>
                         <div className='days'>
-                            <p className='number'>00</p>
+                            <p className='number'>{days}</p>
                             <p className='time-type'>Days</p>
                         </div>
                         <div className='hours'>
-                            <p className='number'>00</p>
+                            <p className='number'>{hours}</p>
                             <p className='time-type'>Hours</p>
                         </div>
                         <div className='mins'>
-                            <p className='number'>00</p>
+                            <p className='number'>{minutes}</p>
                             <p className='time-type'>Mins</p>
                         </div>
                         <div className='secs'>
-                            <p className='number'>00</p>
+                            <p className='number'>{seconds}</p>
                             <p className='time-type'>Secs</p>
                         </div>
                     </div>

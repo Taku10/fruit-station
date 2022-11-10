@@ -11,6 +11,8 @@ import Link from 'next/link'
 import {Product} from '../../components'
 import {Context} from '../../context/StateContext'
 import Aos from 'aos';
+import { motion } from 'framer-motion'
+
 
 
 const ProductDetails = ({ relatedProducts, products }) => {
@@ -35,9 +37,9 @@ const ProductDetails = ({ relatedProducts, products }) => {
             </div>
             <div className='details-container'>
                 <div className='details-wrapper'>
-                    <div className='product-image' data-aos = 'fade-right' data-aos-delay='500'>
+                    <motion.div whileTap={{translate:'100px'}} className='product-image' data-aos = 'fade-right' data-aos-delay='500'>
                         <img src={urlFor(image && image[0])} />
-                    </div>
+                    </motion.div>
                     <div className='product-info' data-aos = 'fade-left' data-aos-delay='800'>
                         <h1 className='product-name'>{name}</h1>
                         <p className='kg'>Per Kg</p>
