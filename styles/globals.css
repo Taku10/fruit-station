@@ -197,6 +197,41 @@ main {
   z-index: 14;
 }
 
+.back-to-top{
+  position: absolute;
+  right: 4rem;
+  background-color: var(---main_color);
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 1rem 1rem;
+  color: white;
+  border-radius:1rem;
+  box-shadow: 12px 12px 12px 12px;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(---main_color);
+  transform: translateY(-0.7em);
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+.arrow-up{
+  font-size: 1.5rem;
+}
+
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(---main_color); }
+}
+
+/* .back-to-top:hover{
+  transform: scale(1.1);
+} */
+
 
 @media (max-width:1300px) {
 

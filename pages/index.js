@@ -1,8 +1,9 @@
-import React,{useState, useEffect} from 'react'
-import { Product, Footer, Start, Benefits, OurProducts, DealMonth, Testimonials, Video , Promo, OurNews, Brands} from '../components'
+import React, { useState, useEffect } from 'react'
+import { Product, Footer, Start, Benefits, OurProducts, DealMonth, Testimonials, Video, Promo, OurNews, Brands } from '../components'
 import { client } from '../lib/client'
 import Link from 'next/link'
-
+import { AiOutlineArrowUp } from 'react-icons/ai'
+import Aos from 'aos'
 
 
 
@@ -10,6 +11,10 @@ import Link from 'next/link'
 
 const Home = ({ products, news }) => {
   console.log(products)
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 })
+}, [])
 
   return (
     <>
@@ -22,6 +27,13 @@ const Home = ({ products, news }) => {
         <Video />
         <Promo />
         <OurNews news={news} />
+        <Link href='#home'>
+          <div className='back-to-top'data-aos='fade-up' >
+            <AiOutlineArrowUp className='arrow-up' />
+          </div>
+        </Link>
+
+
       </div>
     </>
   )
@@ -36,7 +48,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      products,news
+      products, news
     }
   }
 }
