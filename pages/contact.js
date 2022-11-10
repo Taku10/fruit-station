@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { HiLocationMarker } from 'react-icons/hi'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { AiFillContacts } from 'react-icons/ai'
 import Map from '../components/index'
+import Aos from 'aos'
+
 
 
 const Contact = () => {
@@ -28,6 +30,12 @@ const Contact = () => {
     })
   }
 
+  useEffect(()=>{
+    Aos.init({duration:1500, once: true})
+},[])
+
+
+
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -41,8 +49,8 @@ const Contact = () => {
     <div className='contact-container'>
       <div className='contact-start-container'>
         <div className='contact-start-header'>
-          <p>GET 24/7 SUPPORT</p>
-          <h1>Contact Us</h1>
+          <p data-aos = 'fade-down' data-aos-delay='300'>GET 24/7 SUPPORT</p>
+          <h1 data-aos = 'fade-up' data-aos-delay='600'>Contact Us</h1>
         </div>
       </div>
       <div className='contact-wrapper'>

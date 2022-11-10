@@ -24,6 +24,8 @@ const Navbar = ({ logo }) => {
         setNav(true)
       } else {
         setNav(false)
+      } if(window.innerWidth <= 992){
+        setNav(false)
       }
     }
     window.addEventListener('scroll', changeNav);

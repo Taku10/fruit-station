@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { client, urlFor } from '../../lib/client'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { MdDateRange } from 'react-icons/md'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import Link from 'next/link'
+import Aos from 'aos'
 
 
 
@@ -13,12 +14,16 @@ const NewsDetails = ({ otherNews, news }) => {
 
   const { title, date, body1, body2, image } = news
 
+  useEffect(()=>{
+    Aos.init({duration:1500, once: true})
+},[])
+
   return (
     <div className='news-details-container'>
       <div className='news-start-container'>
         <div className='news-start-header'>
-          <p>READ MORE DETAILS</p>
-          <h1>Single Article</h1>
+          <p data-aos = 'fade-down' data-aos-delay='300'>READ MORE DETAILS</p>
+          <h1 data-aos = 'fade-up' data-aos-delay='600'>Single Article</h1>
         </div>
       </div>
       <div className='single-article-container'>

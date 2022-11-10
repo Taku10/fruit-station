@@ -73,9 +73,6 @@ main {
 
 }
 
-.navbar-container.active>.cart-container {
-  margin-top: 2rem
-}
 
 
 
@@ -211,25 +208,27 @@ main {
     display: flex;
     justify-content: center;
     width: 100%;
-    position: relative;
+    position: static;
+    z-index: 45;
   }
   
   .navbar-container{
-    width: 80%;
+    width: 95%;
     justify-content: space-between;
+    position: absolute;
+    z-index: 12;
+ 
   }
 
   .navbar-container.active {
     
     position: static;
     margin-top: 0rem;
+   
   
   }
 
-  .cart-container{
-    margin-right:-6rem ;
-    position: fixed;
-  }
+  
   
   
 
@@ -244,8 +243,8 @@ main {
     position: absolute;
     height: 55vh;
     width: 100%;
-    top:6rem;
-    padding: 2rem 0rem;
+    top:4.5rem;
+    padding: 1rem 0rem;
     animation: hamburger .5s ease-in;
   }
 
@@ -253,18 +252,16 @@ main {
   @keyframes hamburger {
     from{
       opacity: 0;
-      transform: translateY(-10rem);
     }
     to{
       opacity: 1;
-      transform: translateY(0rem);
     }
   }
 
   .nav-items-mobile li{
     margin-left: 2rem;
     margin-right:2rem ;
-    border-bottom:1px solid;
+    border-bottom:1px solid rgb(102, 100, 100);
     padding: 1.9rem 0rem;
   }
 

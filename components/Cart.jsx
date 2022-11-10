@@ -1,6 +1,6 @@
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import { Context } from '../context/StateContext'
-import { BsArrowLeft } from 'react-icons/bs'
+import {MdArrowBackIos} from 'react-icons/md'
 import { BsBasket } from 'react-icons/bs'
 import Link from 'next/link'
 import { urlFor } from '../lib/client'
@@ -56,7 +56,11 @@ const Cart = () => {
     <div className={`${showCart ? 'cart-container anim' : 'cart-container'}`}>
       <div className='cart-wrapper'>
         <div className='cart-top-info'>
-          <BsArrowLeft  onClick={() => setShowCart(false)} className='back-button'/>
+          <div  className='back-button'  onClick={() => setShowCart(false)}>
+          <MdArrowBackIos />
+          <p>Back</p>
+          </div>
+         
           <div className='cart-qty-top'>
             <p>Your Cart </p>
             <p className='qty-number-top'>({totalQuantities} items)</p>

@@ -1,14 +1,21 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {TbTruckDelivery} from 'react-icons/tb'
 import {BiPhoneCall} from 'react-icons/bi'
 import {TiArrowSync} from 'react-icons/ti'
+import Aos from 'aos';
 
 
 
 const Benefits = () => {
+
+    useEffect(()=>{
+        Aos.init({duration:1500, once: false})
+    },[])
+
+
   return (
     <div className='benefits-container'>
-        <div className='benefits-wrapper'>
+        <div className='benefits-wrapper'  data-aos = 'fade-up' data-aos-delay='200'>
             <div className='ben-extras'>
                 <div className='benefit-icon'>
                     <TbTruckDelivery className='icon' />

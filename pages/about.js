@@ -1,17 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import { TbTruckDelivery } from 'react-icons/tb'
 import {BsFillBriefcaseFill} from 'react-icons/bs'
 import { TiArrowSync } from 'react-icons/ti'
 import {BsCash} from 'react-icons/bs'
 import {Promo, Team, Testimonials} from '../components'
+import Aos from 'aos'
 
 const About = () => {
+
+    useEffect(()=>{
+        Aos.init({duration:1500, once: true})
+    },[])
     return (
         <div className='about-container'>
             <div className='about-start-container'>
                 <div className='about-start-header'>
-                    <p>WE SELL FRESH FRUITS</p>
-                    <h1>About Us</h1>
+                    <p  data-aos = 'fade-down' data-aos-delay='300'>WE SELL FRESH FRUITS</p>
+                    <h1 data-aos = 'fade-up' data-aos-delay='600'>About Us</h1>
                 </div>
             </div>
             <div className='about-wrapper'>

@@ -1,19 +1,22 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {BsFillCartFill} from 'react-icons/bs'
 import orange_splash from '../images/orange-splash.png'
+import Aos from 'aos'
 
 const DealMonth = () => {
+
+
     return (
         <div className='deal-month-container'>
             <div className='deal-month-wrapper'>
-                <div className='deal-image'>
+                <div className='deal-image' data-aos = 'fade-right' data-aos-delay='300'>
                     <img src={orange_splash} alt="" />
                     <div className='disc-circle'>
                         <p className='disc'>50%</p>
                         <p className='off-per-kg'>off per kg</p>
                     </div>
                 </div>
-                <div className='deal-desc'>
+                <div className='deal-desc' data-aos = 'fade-left' data-aos-delay='300'>
                     <div className='deal-header'>
                         <h1><span>Deal</span> of the month</h1>
                         <p>HIKAN ORANGE</p>

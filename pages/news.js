@@ -3,6 +3,7 @@ import { Article, Search } from '../components'
 import { client } from '../lib/client'
 import ReactPaginate from 'react-paginate';
 import { motion } from 'framer-motion';
+import Aos from 'aos';
 
 const News = ({ news }) => {
     const [search, setSearch] = useState('')
@@ -26,13 +27,18 @@ const News = ({ news }) => {
         setItemOffset(newOffset);
     }
 
+    useEffect(()=>{
+        Aos.init({duration:1500, once: true})
+    },[])
+    
+
     return (
         <>
             <div className='allNews-container'>
                 <div className='allNews-start-container'>
                     <div className='allNews-start-header'>
-                        <p>ORGANIC INFORMATION</p>
-                        <h1>News Articles</h1>
+                        <p data-aos = 'fade-down' data-aos-delay='300'>ORGANIC INFORMATION</p>
+                        <h1 data-aos = 'fade-up' data-aos-delay='600'>News Articles</h1>
                     </div>
                 </div>
                 <div className='all-articles-list'>
