@@ -27,7 +27,7 @@ const Home = ({ products, news }) => {
         <Video />
         <Promo />
         <OurNews news={news} />
-        <Link href='#home'>
+        <Link href='/'>
           <div className='back-to-top'data-aos='fade-up' >
             <AiOutlineArrowUp className='arrow-up' />
           </div>
