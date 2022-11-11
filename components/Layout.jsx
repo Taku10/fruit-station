@@ -7,12 +7,18 @@ import Cart from './Cart'
 import { Context } from '../context/StateContext'
 import Search from './Search'
 import { motion,useScroll } from 'framer-motion';
+import { useRouter } from 'next/router'
 
 const Layout = ({ children, products}) => {
 
   const useStateContext = useContext(Context);
   const { video, setVideo, showSearch ,showCart, menu, setMenu} = useStateContext;
   const { scrollYProgress } = useScroll();
+
+  const router = useRouter();
+
+if (router.pathname.includes('/login')) return children;
+if (router.pathname.includes('/register')) return children;
 
   return (
 

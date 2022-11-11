@@ -17,6 +17,7 @@ import '../styles/news_details.css'
 import '../styles/about.css'
 import '../styles/contact.css'
 import '../styles/team.css'
+import '../styles/login.css'
 import '../styles/search.css'
 import 'aos/dist/aos.css';
 import React from 'react'
