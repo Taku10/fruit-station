@@ -4,76 +4,63 @@ import { AiOutlineClockCircle } from 'react-icons/ai'
 import { AiFillContacts } from 'react-icons/ai'
 import Map from '../components/index'
 import Aos from 'aos'
+import { toast } from 'react-hot-toast'
+import { useForm } from "react-hook-form";
 
 
 
 const Contact = () => {
 
-  const contactDetails = {
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  }
-
-  const [contact, setContact] = useState(contactDetails)
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value
-    setContact((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      }
-    })
-  }
-
-  useEffect(()=>{
-    Aos.init({duration:1500, once: true})
-},[])
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
 
 
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
 
-    console.log(name, message)
 
-  }
+  useEffect(() => {
+    Aos.init({ duration: 1500, once: true })
+  }, [])
 
-  const { name, email, phone, subject, message } = contact
+
+
+
+
 
   return (
     <div className='contact-container'>
       <div className='contact-start-container'>
         <div className='contact-start-header'>
-          <p data-aos = 'fade-down' data-aos-delay='300'>GET 24/7 SUPPORT</p>
-          <h1 data-aos = 'fade-up' data-aos-delay='600'>Contact Us</h1>
+          <p data-aos='fade-down' data-aos-delay='300'>GET 24/7 SUPPORT</p>
+          <h1 data-aos='fade-up' data-aos-delay='600'>Contact Us</h1>
         </div>
       </div>
       <div className='contact-wrapper'>
-        <div className='contact-grid-left'>
+        <div className='contact-grid-left' data-aos='fade-right' data-aos-delay='1'>
           <h2 className='contact-question'>Have any questions?</h2>
           <p className='contact-desc'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!
           </p>
-          <form className='contact-form' onSubmit={handleSubmit}>
+          <form className='contact-form' onSubmit={handleSubmit(onSubmit)}>
             <div className='contact-fullName'>
-              <input type="text" placeholder="Name" value={name} name='name' onChange={handleChange} />
-              <input type="email" placeholder='Email' value={email} name='email' onChange={handleChange} />
+              <input {...register("name", { required: true, maxLength: 20 })} />
+              {errors.name?.type === 'required' && <p role="alert" className='input-errors'>Name is required!</p>}
+              <input type='email' {...register("email", { required: true, maxLength: 30 })} />
+              {errors.email?.type === 'required' && <p role="alert" className='input-errors'>Email is required!</p>}
             </div>
             <div className='contact-phone-subject'>
-              <input type="text" placeholder='Phone' value={phone} name='phone' onChange={handleChange} />
-              <input type="text" placeholder='Subject' value={subject} name='subject' onChange={handleChange} />
+              <input   {...register("phone", { required: true, maxLength: 10 })} />
+              {errors.phone?.type === 'required' && <p role="alert" className='input-errors'>Phone number is required!</p>}
+              <input  {...register("subject", { required: true, maxLength: 50 })}/>
+              {errors.subject?.type === 'required' && <p role="alert" className='input-errors'>Subject is required!</p>}
             </div>
-            <textarea cols="30" rows="10" placeholder='Message' value={message} name='message' onChange={handleChange}></textarea>
-            <button className='contact-submit'>Submit</button>
-           
+            <textarea cols="30" rows="10" placeholder='Message'{...register("message", { required: true, maxLength: 200 })}></textarea>
+            {errors.message?.type === 'required' && <p role="alert" className='input-errors'>Message is required!</p>}
+            <button className='contact-submit' type='submit'>Submit</button>
+
           </form>
         </div>
-        <div className='contact-grid-right'>
+        <div className='contact-grid-right' data-aos='fade-left' data-aos-delay='300'>
           <div className='contact-shop-address'>
             <div className='header-icon'>
               <HiLocationMarker className='contact-icon' />
