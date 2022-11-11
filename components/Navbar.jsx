@@ -1,46 +1,49 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Link from 'next/link'
 import fruit_logo from '../images/fruit-logo.png'
 import Image from 'next/image'
 import { BsFillCartFill } from 'react-icons/bs'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { AiOutlineClose } from 'react-icons/ai'
-import { GiHamburgerMenu} from 'react-icons/gi'
+import { GiHamburgerMenu } from 'react-icons/gi'
 import { GiFruitBowl } from 'react-icons/gi'
-import {Cart, Search} from './'
+import { Cart, Search } from './'
 import { Context } from '../context/StateContext'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../utils/firebase'
 
 
 const Navbar = ({ logo }) => {
+  const [user, loading] = useAuthState(auth);
   const [nav, setNav] = useState(false)
   const useStateContext = useContext(Context)
-  const{showCart, setShowCart, totalQuantities, showSearch, setShowSearch ,menu, setMenu}= useStateContext;
+  const { showCart, setShowCart, totalQuantities, showSearch, setShowSearch, menu, setMenu } = useStateContext;
 
- //navbar background color change on scroll
-  useEffect(()=>{
+  //navbar background color change on scroll
+  useEffect(() => {
     const changeNav = () => {
       if (window.scrollY >= 1) {
         setNav(true)
       } else {
         setNav(false)
-      } if(window.innerWidth <= 992){
+      } if (window.innerWidth <= 992) {
         setNav(false)
       }
     }
     window.addEventListener('scroll', changeNav);
   })
- 
- 
+
+
 
   //close mobile navbar after clicked link
-  const linkClose= ()=>{
+  const linkClose = () => {
     setMenu(false)
   }
 
- 
+
 
   return (
-    <nav className={`${ nav ? 'navbar-container active': 'navbar-container'}`}>
+    <nav className={`${nav ? 'navbar-container active' : 'navbar-container'}`}>
       <Link href='/'>
         <div className='logo'>
           <GiFruitBowl className='logo-icon' />
@@ -56,7 +59,7 @@ const Navbar = ({ logo }) => {
         <li><Link href='/contact'>Contact</Link></li>
       </ul>
 
-      { menu && <ul className='nav-items-mobile'>
+      {menu && <ul className='nav-items-mobile'>
         <li onClick={linkClose}><Link href='/' >Home</Link></li>
         <li onClick={linkClose}><Link href='/shop'>Shop</Link></li>
         <li onClick={linkClose}><Link href='/news'>News</Link></li>
@@ -65,15 +68,20 @@ const Navbar = ({ logo }) => {
       </ul>
       }
       <div className='cart-search-nav'>
-        <button className='cart-button' onClick={()=> setShowCart(true)}>
+        <button className='cart-button' onClick={() => setShowCart(true)}>
           <BsFillCartFill className='cart-nav' />
-        <span className='cart-item-qty'>{totalQuantities}</span>
+          <span className='cart-item-qty'>{totalQuantities}</span>
         </button>
-       {!menu ? <GiHamburgerMenu className='hamburger-menu' onClick={()=>setMenu(true)}/>: <AiOutlineClose className='close-menu' onClick={()=>setMenu(false)} />}
-      
+        {!user ?
+          <p>
+            <Link href='/login'>Sign In</Link>
+          </p> : <p onClick={() => auth.signOut()}>Sign Out</p>
+        }
+        {!menu ? <GiHamburgerMenu className='hamburger-menu' onClick={() => setMenu(true)} /> : <AiOutlineClose className='close-menu' onClick={() => setMenu(false)} />}
+
       </div>
-   
-     
+
+
     </nav>
   )
 }

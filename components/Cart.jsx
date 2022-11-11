@@ -9,8 +9,12 @@ import { AiOutlinePlus } from 'react-icons/ai'
 import { BsTrash } from 'react-icons/bs'
 import getStripe from '../lib/getStripe'
 import toast from 'react-hot-toast'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../utils/firebase'
+import RequiredLogin from './RequiredLogin'
 
 const Cart = () => {
+    const [user, loading] = useAuthState(auth);
   const useStateContext = useContext(Context)
   const { showCart, setShowCart, cartItems, totalQuantities, totalPrice, toggleCartItemQuantity, onRemove } = useStateContext;
   const [nav, setNav] = useState(false)
@@ -45,9 +49,16 @@ const Cart = () => {
     const data = await response.json();
     console.log(data.id)
 
-    toast.loading('Redirecting...');
+   
 
-    stripe.redirectToCheckout({ sessionId: data.id });
+   
+    
+    if(!user){
+      alert("Please Login")
+    }else{
+      toast.loading('Redirecting...');
+      stripe.redirectToCheckout({ sessionId: data.id });
+    }
   }
 
 
@@ -118,7 +129,7 @@ const Cart = () => {
           )}
         </div>
 
-
+            <RequiredLogin/>
       </div>
     </div>
   )
