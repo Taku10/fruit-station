@@ -95,11 +95,13 @@ color: var(---sec_color);
     font-family: var(---poppins);
     font-weight: 400;
     font-size: 14px;
+    transition: .5s ease-in-out;
 }
 
 .shop-now:hover{
     background-color: var(---sec_color);
-    color:var(---main_color)
+    color:var(---main_color);
+    transform: scale(1.1);
 }
 
 @media (max-width:1300px) {

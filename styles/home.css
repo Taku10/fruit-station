@@ -57,6 +57,14 @@
     width: 50%;
 }
 
+.home-buttons button{
+    transition: .5s ease-in-out;
+}
+
+.home-buttons button:hover{
+    transform: scale(1.1);
+}
+
 .collection-button {
     font-size: 14px;
     font-family: var(---poppins);

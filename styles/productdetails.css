@@ -70,20 +70,22 @@
 .product-image {
     display: flex;
     justify-content: center;
-
+ 
     height: 27rem;
     width: 90%;
     box-shadow: 1px 2px 10px -3px;
-    transition: .6s ease-in;
+    transition: 1s ease-in-out;
 }
 
 .product-image:hover{
     background-color: #ebb589;
+
 }
 
 .product-image img {
     width: 25rem;
     object-fit: contain;
+ 
 }
 
 .product-name {
@@ -139,6 +141,7 @@
     transition: .4s ease;
     font-weight: 600;
     height: 100%;
+    cursor: pointer;
 }
 
 .minus{

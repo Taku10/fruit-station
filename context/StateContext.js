@@ -45,6 +45,8 @@ export const StateContext = ({ children }) => {
         setTotalPrice((prev)=> prev - foundProduct.price * foundProduct.quantity);
         setTotalQuantities((prev) => prev - foundProduct.quantity)
         setCartItems(newCartItems)
+        toast.success('Item Removed!!')
+        
     }
 
     const onAdd = (product, quantity) => {

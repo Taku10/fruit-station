@@ -157,11 +157,13 @@
     padding: 0rem 1rem;
     transition: .2s ease-in-out;
     cursor: pointer;
+    transition: .5s ease-in-out;
 }
 
 .add-to-cart:hover {
     background-color: var(---sec_color);
-    color: var(---main_color)
+    color: var(---main_color);
+    transform: scale(1.1);
 }
 
 .add-to-cart p {
