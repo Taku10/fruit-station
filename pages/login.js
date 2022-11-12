@@ -2,21 +2,48 @@ import React from 'react'
 import { GiFruitBowl } from 'react-icons/gi'
 import { FcGoogle } from 'react-icons/fc'
 import { FaFacebookSquare } from 'react-icons/fa'
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import {auth} from '../utils/firebase'
+import { FacebookAuthProvider, GoogleAuthProvider, signInWithPopup, updateProfile } from 'firebase/auth'
+import { auth } from '../utils/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useRouter } from 'next/router'
+import { toast } from 'react-hot-toast'
+import { async } from '@firebase/util'
+
 
 const Login = () => {
+  const [user, loading] = useAuthState(auth);
 
-const googleProvider = new GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
+  const route = useRouter()
 
-const GoogleLogin = async()=>{
-  try{
-      const result = await signInWithPopup(auth, googleProvider)
-  }catch(error){
-    console.log(error)
+
+  
+
+  const GoogleLogin = async () => {
+    try {
+       const result = await signInWithPopup(auth, googleProvider, FacebookAuthProvider, updateProfile)
+
+      if(result){
+        route.push('/')
+        toast.success(<p className='sign'> Hi there {user.displayName}</p>)
+      }
+   
+
+    } catch (error) {
+      console.log(error)
+    }
   }
-}
 
+
+  const fbProvider = new FacebookAuthProvider()
+  const FacebookLogin = async()=>{
+    try{
+      const result = await signInWithPopup(auth,fbProvider)
+      route.push('/')
+    }catch(error){
+      console.log(error)
+    }
+  }
 
 
 
@@ -38,7 +65,7 @@ const GoogleLogin = async()=>{
               <FcGoogle className='google-icon' />
               <p>Sign with Google</p>
             </button>
-            <button className='facebook-button'>
+            <button className='facebook-button' onClick={FacebookLogin}>
               <FaFacebookSquare className='facebook-icon' />
               <p>Sign with Facebook</p>
             </button>

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useContext, useEffect } from 'react'
 import { Context } from '../context/StateContext'
-import {MdArrowBackIos} from 'react-icons/md'
+import { MdArrowBackIos } from 'react-icons/md'
 import { BsBasket } from 'react-icons/bs'
 import Link from 'next/link'
 import { urlFor } from '../lib/client'
@@ -14,10 +14,12 @@ import { auth } from '../utils/firebase'
 import RequiredLogin from './RequiredLogin'
 
 const Cart = () => {
-    const [user, loading] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const useStateContext = useContext(Context)
-  const { showCart, setShowCart, cartItems, totalQuantities, totalPrice, toggleCartItemQuantity, onRemove } = useStateContext;
+  const { log, setLog, showCart, setShowCart, cartItems, totalQuantities, totalPrice, toggleCartItemQuantity, onRemove } = useStateContext;
   const [nav, setNav] = useState(false)
+
+  console.log(user)
 
   useEffect(() => {
     const changeNav = () => {
@@ -49,13 +51,13 @@ const Cart = () => {
     const data = await response.json();
     console.log(data.id)
 
-   
 
-   
-    
-    if(!user){
-      alert("Please Login")
-    }else{
+
+
+
+    if (!user) {
+      setLog(true)
+    } else {
       toast.loading('Redirecting...');
       stripe.redirectToCheckout({ sessionId: data.id });
     }
@@ -65,13 +67,14 @@ const Cart = () => {
 
   return (
     <div className={`${showCart ? 'cart-container anim' : 'cart-container animBack'}`}>
+      <div className={`${log ? 'cart-dim active' : 'cart-dim'}`}></div>
       <div className='cart-wrapper'>
         <div className='cart-top-info'>
-          <div  className='back-button'  onClick={() => setShowCart(false)}>
-          <MdArrowBackIos />
-          <p>Back</p>
+          <div className='back-button' onClick={() => setShowCart(false)}>
+            <MdArrowBackIos />
+            <p>Back</p>
           </div>
-         
+
           <div className='cart-qty-top'>
             <p>Your Cart </p>
             <p className='qty-number-top'>({totalQuantities} items)</p>
@@ -129,7 +132,7 @@ const Cart = () => {
           )}
         </div>
 
-            <RequiredLogin/>
+        {log && <RequiredLogin />}
       </div>
     </div>
   )

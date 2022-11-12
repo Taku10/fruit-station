@@ -20,7 +20,7 @@ html {
 }
 
 
-.dim-overflow{
+.dim-overflow {
   overflow: hidden;
 }
 
@@ -52,7 +52,7 @@ main {
   height: 100%;
   width: 100%;
   margin-bottom: 10rem;
- 
+
 }
 
 .navbar-container {
@@ -107,7 +107,7 @@ main {
   width: 30%;
 }
 
-.nav-items-mobile{
+.nav-items-mobile {
   display: none;
 }
 
@@ -128,21 +128,20 @@ main {
   color: var(---main_color)
 }
 
-.hamburger-menu{
+.hamburger-menu {
   display: none;
 }
 
-.close-menu{
+.close-menu {
   display: none;
 }
 
 .cart-search-nav {
   display: flex;
   justify-content: space-between;
-  width: 5%;
+  width: 12%;
   font-size: 18px;
   font-weight: 900;
-
 }
 
 .cart-nav,
@@ -197,7 +196,7 @@ main {
   z-index: 14;
 }
 
-.back-to-top{
+.back-to-top {
   position: absolute;
   right: 4rem;
   background-color: var(---main_color);
@@ -205,7 +204,7 @@ main {
   height: 1.5rem;
   padding: 1rem 1rem;
   color: white;
-  border-radius:1rem;
+  border-radius: 1rem;
   box-shadow: 12px 12px 12px 12px;
   cursor: pointer;
   transition: .5s ease;
@@ -219,13 +218,15 @@ main {
   box-shadow: 0 0 0 2em transparent;
 }
 
-.arrow-up{
+.arrow-up {
   font-size: 1.5rem;
 }
 
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(---main_color); }
+  0% {
+    box-shadow: 0 0 0 0 var(---main_color);
+  }
 }
 
 /* .back-to-top:hover{
@@ -234,32 +235,34 @@ main {
 
 
 
-.required-login-container{
+.required-login-container {
   position: absolute;
   top: 40%;
-  right:35%;
-  border: 1px solid;
+  right: 35%;
+box-shadow: 1px 2px 14px 1px var(---main_color);
   height: 12rem;
   width: 25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:2rem;
-  background-color: white
+  gap: 2rem;
+  background-color: white;
+  z-index: 14;
+  border-radius: .5rem;
 }
 
-.required-login-container p{
+.required-login-container p {
   font-size: 1.5rem;
   font-family: var(---poppins);
   color: var(---sec_color);
   font-weight: 600;
 }
 
-.required-login-container button{
+.required-login-container button {
   width: 12rem;
   height: 2.5rem;
-  border-radius:.5rem ;
+  border-radius: .5rem;
   border: none;
   font-size: 1rem;
   font-family: var(---poppins);
@@ -270,12 +273,89 @@ main {
   transition: .6s ease-in-out;
 }
 
-.required-login-container button:hover{
+.required-login-container button:hover {
   background-color: var(---sec_color);
-  color:var(---main_color);
+  color: var(---main_color);
   transform: scale(1.1);
 }
 
+.cart-dim {
+  z-index: 13;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: none;
+  overflow-y: hidden;
+
+}
+
+
+
+.cart-dim.active {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 1s ease;
+}
+
+.sign{
+  font-size: 1.2rem;
+  font-family: var(---open);
+  font-weight: 600;
+  color: var(---sec_color);
+}
+
+.sign-in-button{
+  background-color: var(---main_color);
+  width: 6rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .9rem;
+  transition: .6s ease-in-out;
+  cursor: pointer;
+}
+
+.sign-in-button:hover{
+  background-color: var(---sec_color);
+  color: var(---main_color);
+  transform: scale(1.1);
+  border: 1px solid var(---main_color);
+}
+
+
+
+.sign-in-button a{
+  text-decoration: none;
+  font-size: 14px;
+  font-family: var(---poppins);
+  font-weight: 700;
+  transition: .4s ease-in-out;
+  color: #ffffff
+}
+
+.sign-out-button {
+  text-decoration: none;
+  font-size: 14px;
+  font-family: var(---poppins);
+  font-weight: 700;
+  transition: .4s ease-in-out;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid var(---main_color);
+  width: 6rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .9rem;
+  transition: .6s ease-in-out;
+  cursor: pointer;
+}
+
+.sign-out-button:hover{
+  transform: scale(1.1);
+}
 
 
 
@@ -289,38 +369,38 @@ main {
 @media (max-width:992px) {
 
 
-  header{
+  header {
     display: flex;
     justify-content: center;
     width: 100%;
     position: static;
     z-index: 45;
   }
-  
-  .navbar-container{
+
+  .navbar-container {
     width: 95%;
     justify-content: space-between;
     position: absolute;
     z-index: 12;
- 
+
   }
 
   .navbar-container.active {
-    
+
     position: static;
     margin-top: 0rem;
-   
-  
+
+
   }
 
-  
-  
-  
 
-  .nav-items{
+
+
+
+  .nav-items {
     display: none;
   }
-  
+
   .nav-items-mobile {
     display: flex;
     flex-direction: column;
@@ -328,36 +408,37 @@ main {
     position: absolute;
     height: 55vh;
     width: 100%;
-    top:4.5rem;
+    top: 4.5rem;
     padding: 1rem 0rem;
     animation: hamburger .5s ease-in;
     border-radius: 1rem;
-    
+
   }
 
 
   @keyframes hamburger {
-    from{
+    from {
       opacity: 0;
       transform: translateY(-100px);
     }
-    to{
+
+    to {
       opacity: 1;
       transform: translateY(0px);
     }
   }
 
-  .nav-items-mobile li{
+  .nav-items-mobile li {
     margin-left: 2rem;
-    margin-right:2rem ;
-    border-bottom:1px solid rgb(134, 117, 84);
+    margin-right: 2rem;
+    border-bottom: 1px solid rgb(134, 117, 84);
     padding: 1.9rem 0rem;
   }
 
   .nav-items-mobile li {
     list-style: none;
   }
-  
+
   .nav-items-mobile li a {
     text-decoration: none;
     font-size: 14px;
@@ -366,14 +447,14 @@ main {
     transition: .4s ease-in-out;
     color: #ffffff
   }
-  
+
   .nav-items-mobile li a:hover {
     color: var(---main_color)
   }
-  
 
-  .hamburger-menu{
-    color:var(---sec_color);
+
+  .hamburger-menu {
+    color: var(---sec_color);
     background-color: var(---main_color);
     padding: .5rem .5rem;
     font-size: 1.4rem;
@@ -383,8 +464,8 @@ main {
     border-radius: .7rem;
   }
 
-  .close-menu{
-    color:var(---sec_color);
+  .close-menu {
+    color: var(---sec_color);
     background-color: var(---main_color);
     padding: .5rem .5rem;
     font-size: 1.4rem;
@@ -395,15 +476,15 @@ main {
     border-radius: .7rem;
   }
 
-  .cart-search-nav{
+  .cart-search-nav {
     width: 15%;
   }
 
 }
 
 @media (max-width:768px) {
-  
-  .cart-search-nav{
+
+  .cart-search-nav {
     width: 15%;
   }
 
@@ -411,8 +492,8 @@ main {
 }
 
 @media (max-width:500px) {
-  
-  .cart-search-nav{
+
+  .cart-search-nav {
     width: 30%;
   }
 

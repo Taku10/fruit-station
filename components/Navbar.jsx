@@ -11,6 +11,8 @@ import { Cart, Search } from './'
 import { Context } from '../context/StateContext'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../utils/firebase'
+import { useRouter } from 'next/router'
+import { toast } from 'react-hot-toast'
 
 
 const Navbar = ({ logo }) => {
@@ -18,7 +20,7 @@ const Navbar = ({ logo }) => {
   const [nav, setNav] = useState(false)
   const useStateContext = useContext(Context)
   const { showCart, setShowCart, totalQuantities, showSearch, setShowSearch, menu, setMenu } = useStateContext;
-
+  const route = useRouter()
   //navbar background color change on scroll
   useEffect(() => {
     const changeNav = () => {
@@ -39,8 +41,21 @@ const Navbar = ({ logo }) => {
   const linkClose = () => {
     setMenu(false)
   }
+  
 
-
+  const signOut=()=>{
+    if(auth.signOut()){
+      route.push('/login')
+      toast.promise(
+        auth.signOut(),
+         {
+           success: <p className='sign'>Signed Out</p>,
+           error: <b>Failed to Sign Out</b>,
+         }
+       );
+    }
+    
+  }
 
   return (
     <nav className={`${nav ? 'navbar-container active' : 'navbar-container'}`}>
@@ -73,9 +88,9 @@ const Navbar = ({ logo }) => {
           <span className='cart-item-qty'>{totalQuantities}</span>
         </button>
         {!user ?
-          <p>
+          <p className='sign-in-button'>
             <Link href='/login'>Sign In</Link>
-          </p> : <p onClick={() => auth.signOut()}>Sign Out</p>
+          </p> : <p onClick={signOut} className='sign-out-button'>Sign Out</p>
         }
         {!menu ? <GiHamburgerMenu className='hamburger-menu' onClick={() => setMenu(true)} /> : <AiOutlineClose className='close-menu' onClick={() => setMenu(false)} />}
 
