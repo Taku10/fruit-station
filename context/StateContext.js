@@ -7,14 +7,14 @@ let foundProduct;
 let index;
 
 
-    const cartFromLocalStorage = typeof window != 'undefined' && JSON.parse(localStorage.getItem('cart')) || '[]'
+    // const cartFromLocalStorage = typeof window != 'undefined' && JSON.parse(localStorage.getItem('cart')) || "[]"
    
 
 export const StateContext = ({ children }) => {
 
     const [showCart, setShowCart] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
-    const [cartItems, setCartItems] = useState( cartFromLocalStorage);
+    const [cartItems, setCartItems] = useState( []);
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty, setQty] = useState(1)

@@ -4,6 +4,8 @@ import fruit_logo from '../images/fruit-logo.png'
 import Image from 'next/image'
 import { BsFillCartFill } from 'react-icons/bs'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { FiLogIn } from 'react-icons/fi'
+import { FiLogOut } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GiFruitBowl } from 'react-icons/gi'
@@ -15,11 +17,13 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-hot-toast'
 
 
+
+
 const Navbar = ({ logo }) => {
   const [user, loading] = useAuthState(auth);
   const [nav, setNav] = useState(false)
   const useStateContext = useContext(Context)
-  const { showCart, setShowCart, totalQuantities, cartItems ,showSearch, setShowSearch, menu, setMenu } = useStateContext;
+  const { showCart, setShowCart, totalQuantities, cartItems, showSearch, setShowSearch, menu, setMenu } = useStateContext;
   const route = useRouter()
   //navbar background color change on scroll
   useEffect(() => {
@@ -41,26 +45,26 @@ const Navbar = ({ logo }) => {
   const linkClose = () => {
     setMenu(false)
   }
-  
 
-  const signOut=()=>{
-    if(auth.signOut()){
+
+  const signOut = () => {
+    if (auth.signOut()) {
       route.push('/login')
       toast.promise(
         auth.signOut(),
-         {
-           success: <p className='sign'>Signed Out</p>,
-           error: <b>Failed to Sign Out</b>,
-         }
-       );
+        {
+          success: <p className='sign'>Signed Out</p>,
+          error: <b>Failed to Sign Out</b>,
+        }
+      );
     }
-    
+
   }
 
   return (
     <nav className={`${nav ? 'navbar-container active' : 'navbar-container'}`}>
       <Link href='/'>
-        <div className='logo'>
+        <div className='logo'   >
           <GiFruitBowl className='logo-icon' />
           <h1 className='logo-text'>FruitKu</h1>
         </div>
@@ -84,15 +88,25 @@ const Navbar = ({ logo }) => {
       }
       <div className='cart-search-nav'>
         <button className='cart-button' onClick={() => setShowCart(true)}>
-          <BsFillCartFill className='cart-nav' />
+          <BsFillCartFill className='cart-nav' title='Shopping Cart'/>
           <span className='cart-item-qty'>{cartItems.length}</span>
         </button>
-        {!user ?
-          <p className='sign-in-button'>
-            <Link href='/login'>Sign In</Link>
-          </p> : <p onClick={signOut} className='sign-out-button'>Sign Out</p>
-        }
+        <div className='user-account-desktop'>
+          {!user ?
+
+            <p className='sign-in-button'>
+              <Link href='/login'>Sign In</Link>
+            </p> : <p onClick={signOut} className='sign-out-button'>Sign Out</p>
+          }
+        </div>
+        <div className='user-account-mobile'>
+          {!user ?
+            
+            <FiLogIn title='Sign In' className='sign-in-button-mobile' onClick={()=>route.push('/login')}/>:<FiLogOut title='Sign Out' onClick={signOut} className='sign-out-button-mobile' />
+          }
+        </div>
         {!menu ? <GiHamburgerMenu className='hamburger-menu' onClick={() => setMenu(true)} /> : <AiOutlineClose className='close-menu' onClick={() => setMenu(false)} />}
+
 
       </div>
 
