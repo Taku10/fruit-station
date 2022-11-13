@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-scroll'
+import Link  from 'next/link'
 import {motion} from 'framer-motion'
 
 const Start = () => {
@@ -12,7 +12,7 @@ const Start = () => {
           <Link href='/shop'>
             <button className='collection-button'>Fruit Collection</button>
           </Link>
-          <Link to='/contact'>
+          <Link href='/contact'>
             <button className='contact-button'>Contact Us</button>
           </Link>
         </motion.div>

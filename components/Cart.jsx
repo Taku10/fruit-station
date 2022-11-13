@@ -13,13 +13,18 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '../utils/firebase'
 import RequiredLogin from './RequiredLogin'
 
+
+
+
 const Cart = () => {
   const [user, loading] = useAuthState(auth);
   const useStateContext = useContext(Context)
-  const { log, setLog, showCart, setShowCart, cartItems, totalQuantities, totalPrice, toggleCartItemQuantity, onRemove } = useStateContext;
+  const { log, setLog, showCart, setShowCart, cartItems, setCartItems, totalQuantities, totalPrice, toggleCartItemQuantity, onRemove } = useStateContext;
   const [nav, setNav] = useState(false)
 
-  console.log(user)
+
+
+  console.log(cartItems.length)
 
   useEffect(() => {
     const changeNav = () => {
@@ -32,6 +37,10 @@ const Cart = () => {
     }
     window.addEventListener('scroll', changeNav);
   })
+
+  
+ 
+  
 
   const handleCheckout = async () => {
     const stripe = await getStripe();

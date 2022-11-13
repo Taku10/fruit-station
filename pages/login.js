@@ -17,18 +17,12 @@ const Login = () => {
   const route = useRouter()
 
 
-  
-
   const GoogleLogin = async () => {
     try {
-       const result = await signInWithPopup(auth, googleProvider, FacebookAuthProvider, updateProfile)
-
-      if(result){
+      const result = await signInWithPopup(auth, googleProvider)
+      if (result) {
         route.push('/')
-        toast.success(<p className='sign'> Hi there {user.displayName}</p>)
       }
-   
-
     } catch (error) {
       console.log(error)
     }
@@ -38,8 +32,10 @@ const Login = () => {
   const fbProvider = new FacebookAuthProvider()
   const FacebookLogin = async()=>{
     try{
-      const result = await signInWithPopup(auth,fbProvider)
-      route.push('/')
+      const result = await signInWithPopup(auth, fbProvider)
+        route.push('/')
+        console.log(result)
+     
     }catch(error){
       console.log(error)
     }

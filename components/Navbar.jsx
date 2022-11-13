@@ -19,7 +19,7 @@ const Navbar = ({ logo }) => {
   const [user, loading] = useAuthState(auth);
   const [nav, setNav] = useState(false)
   const useStateContext = useContext(Context)
-  const { showCart, setShowCart, totalQuantities, showSearch, setShowSearch, menu, setMenu } = useStateContext;
+  const { showCart, setShowCart, totalQuantities, cartItems ,showSearch, setShowSearch, menu, setMenu } = useStateContext;
   const route = useRouter()
   //navbar background color change on scroll
   useEffect(() => {
@@ -85,7 +85,7 @@ const Navbar = ({ logo }) => {
       <div className='cart-search-nav'>
         <button className='cart-button' onClick={() => setShowCart(true)}>
           <BsFillCartFill className='cart-nav' />
-          <span className='cart-item-qty'>{totalQuantities}</span>
+          <span className='cart-item-qty'>{cartItems.length}</span>
         </button>
         {!user ?
           <p className='sign-in-button'>
