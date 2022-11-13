@@ -48,7 +48,7 @@ const Login = () => {
       <div className='login-wrapper'>
         <div className='login-left'></div>
         <div className='login-right'>
-          <div className='login-logo'>
+          <div className='login-logo' onClick={()=> route.push('/')}>
             <GiFruitBowl className='login-logo-icon' />
             <h1 className='login-logo-text'>FruitKu</h1>
           </div>
