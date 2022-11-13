@@ -18,7 +18,7 @@ const Layout = ({ children, products}) => {
   const router = useRouter();
 
 if (router.pathname.includes('/login')) return children;
-if (router.pathname.includes('/register')) return children;
+if (router.pathname.includes('/success')) return children;
 
   return (
 
