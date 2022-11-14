@@ -32,7 +32,7 @@ if (router.pathname.includes('/success')) return children;
       {showCart && <Cart />} 
       <Head>
         <title>FruitKu </title>
-        <link rel="shortcut icon" href="/site-logo.png" />
+        <link rel="shortcut icon" href="/tab-logo.png" />
       </Head>
       <header>
         <Navbar />
