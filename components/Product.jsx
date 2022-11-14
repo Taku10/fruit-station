@@ -23,7 +23,13 @@ const Product = ({ sort, products: { name, price, image, slug } }) => {
             <h2>{name}</h2>
             <div className='price-kg'>
               <p>per Kg</p>
-             <h3>$ {price}</h3>
+             {name === "Oranges" ? 
+             <div className='discount-before'> 
+              <p>$ {price} </p>
+              <h3 className='now-price'> ${(price / 2).toFixed()}</h3>
+             </div>:
+             
+             <h3>$ {price}</h3>}
             </div>
 
           </div>

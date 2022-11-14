@@ -122,7 +122,7 @@ const Cart = () => {
 
               </div>
               <div className='cart-right'>
-                <p className='cart-price'>$ {item.price}</p>
+                <p className='cart-price'>$ {item.name === 'Oranges' ? item.price/2: item.price}</p>
 
               </div>
             </div>

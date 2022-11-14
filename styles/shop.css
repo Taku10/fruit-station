@@ -169,6 +169,17 @@
   font-weight: 700;
 }
 
+.discount-before p {
+  text-decoration: line-through;
+  font-weight: 700;
+  color: grey;
+  font-size: 1rem;
+}
+
+.discount-before h3{
+  color: var(---main_color);
+}
+
 .fruit-image {
   display: flex;
   justify-content: center;
