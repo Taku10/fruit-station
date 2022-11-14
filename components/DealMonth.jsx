@@ -59,7 +59,7 @@ const DealMonth = () => {
                 <div className='deal-desc' data-aos = 'fade-left' data-aos-delay='300'>
                     <div className='deal-header'>
                         <h1><span>Deal</span> of the month</h1>
-                        <p>HIKAN ORANGE</p>
+                        <p>ORANGES</p>
                     </div>
                     <p className='deal-text'>
                         Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant
