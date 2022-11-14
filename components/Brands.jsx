@@ -10,8 +10,8 @@ const Brands = () => {
          <Slider className='brand-slide desktop-brand' arrows={false}  slidesToShow={4}  autoplay={true} autoplaySpeed={3000}>
 
             {brand_data.map((item, index)=>(
-                <div key={index} className='brand' >
-                    <img src={item.src} alt={item} />
+                <div  className='brand' >
+                    <img src={item.src} alt={item} key={index}/>
                 </div>
             ))
             
