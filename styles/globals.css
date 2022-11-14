@@ -555,6 +555,9 @@ box-shadow: 1px 2px 14px 1px var(---main_color);
     display: none;
   }
 
+  .back-to-top {
+    bottom: 80rem;
+  }
 
 
 
@@ -576,4 +579,7 @@ box-shadow: 1px 2px 14px 1px var(---main_color);
     width: 35%;
   }
 
+  .back-to-top {
+    bottom: 90rem;
+  }
 }
