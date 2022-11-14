@@ -76,7 +76,7 @@ const Cart = () => {
 
   return (
     <div className={`${showCart ? 'cart-container anim' : 'cart-container animBack'}`}>
-      <div className={`${log ? 'cart-dim active' : 'cart-dim'}`}></div>
+      <div className={`${log ? 'cart-dim active' : 'cart-dim'}`} onClick={()=>setLog(false)}></div>
       <div className='cart-wrapper'>
         <div className='cart-top-info'>
           <div className='back-button' onClick={() => setShowCart(false)}>
@@ -122,7 +122,7 @@ const Cart = () => {
 
               </div>
               <div className='cart-right'>
-                <p className='cart-price'>$ {item.name === 'Oranges' ? item.price/2: item.price}</p>
+                <p className='cart-price'>$ {item.price}</p>
 
               </div>
             </div>
