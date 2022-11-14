@@ -27,6 +27,7 @@
     display: flex;
     gap:1rem;
     align-items: center;
+    border: 1px solid;
     
   }
 
@@ -90,6 +91,7 @@
     .ben-extras{
       width: 100%;
       display: flex;
+      margin-left: 2rem;
    
     }
 

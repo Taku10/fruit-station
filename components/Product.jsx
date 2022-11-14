@@ -13,6 +13,9 @@ const Product = ({ sort, products: { name, price, image, slug } }) => {
 
       <Link href={`/product/${slug.current}`}>
         <div className='fruit-wrapper'>
+         { name === 'Oranges' && <div className='item-discount'>
+            <p>50%</p>
+          </div>}
           <div className='fruit-image'>
             <img src={urlFor(image && image[0])} alt="" />
           </div>
@@ -20,7 +23,7 @@ const Product = ({ sort, products: { name, price, image, slug } }) => {
             <h2>{name}</h2>
             <div className='price-kg'>
               <p>per Kg</p>
-              <h3>$ {price}</h3>
+             <h3>$ {price}</h3>
             </div>
 
           </div>
