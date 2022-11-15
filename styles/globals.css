@@ -128,6 +128,10 @@ main {
   color: var(---main_color)
 }
 
+.nav-items li a:focus{
+  color: var(---main_color);
+}
+
 .hamburger-menu {
   display: none;
 }
@@ -386,7 +390,7 @@ box-shadow: 1px 2px 14px 1px var(---main_color);
   gap:2rem;
   align-items: center;
   text-align: center;
-  width: 50%;
+  width: 80%;
   height: 26rem;
  justify-content: center;
   background-color: rgb(212, 209, 209);
@@ -411,6 +415,28 @@ box-shadow: 1px 2px 14px 1px var(---main_color);
   color: var(---main_color);
   cursor: pointer;
 }
+.success-continue-shopping-button {
+  width: 17rem;
+  height: 2.5rem;
+  border-radius: .6rem;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: var(---poppins);
+  background-color: var(---main_color);
+  letter-spacing: .17rem;
+  border: none;
+  color: white;
+  transition: .4s ease-in-out;
+  cursor: pointer;
+}
+
+
+
+.success-continue-shopping-button:hover{
+  color: var(---main_color);
+  background-color: var(---sec_color);
+  transform: scale(1.1);
+}
 
 
 
@@ -418,6 +444,9 @@ box-shadow: 1px 2px 14px 1px var(---main_color);
 
   .nav-items {
     width: 40%;
+  }
+  .success-wrapper{
+    width: 80%;
   }
 }
 
@@ -559,7 +588,9 @@ box-shadow: 1px 2px 14px 1px var(---main_color);
     bottom: 80rem;
   }
 
-
+.success-wrapper{
+  width: 80%;
+}
 
 
 }
@@ -568,6 +599,25 @@ box-shadow: 1px 2px 14px 1px var(---main_color);
 
   .cart-search-nav {
     width: 25%;
+  }
+
+  .success-wrapper h1{
+    font-size: 1.5rem;
+    font-family: var(---poppins);
+    color: var(---sec_color);
+    font-weight: 700;
+  }
+  
+  .success-wrapper p {
+    font-size: .7rem;
+    font-family: var(---poppins);
+    color: var(---sec_color);
+    font-weight: 600;
+  }
+  
+  .questions span{
+    color: var(---main_color);
+    cursor: pointer;
   }
 
 
@@ -582,4 +632,44 @@ box-shadow: 1px 2px 14px 1px var(---main_color);
   .back-to-top {
     bottom: 90rem;
   }
+
+  .success-wrapper{
+    width: 90%;
+  }
+
+  .success-wrapper h1{
+    font-size: 1.2rem;
+    font-family: var(---poppins);
+    color: var(---sec_color);
+    font-weight: 700;
+  }
+  
+  .success-wrapper p {
+    font-size: .6rem;
+    font-family: var(---poppins);
+    color: var(---sec_color);
+    font-weight: 600;
+  }
+  
+  .questions span{
+    color: var(---main_color);
+    cursor: pointer;
+  }
+
+  .success-continue-shopping-button {
+    width: 14rem;
+    height: 2.5rem;
+    border-radius: .6rem;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(---poppins);
+    background-color: var(---main_color);
+    letter-spacing: .17rem;
+    border: none;
+    color: white;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+    margin: 0rem 1rem;
+  }
+  
 }

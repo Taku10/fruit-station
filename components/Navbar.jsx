@@ -80,7 +80,7 @@ const Navbar = ({ logo }) => {
 
       {menu && <ul className='nav-items-mobile'>
         <li onClick={linkClose}><Link href='/' >Home</Link></li>
-        <li onClick={linkClose}><Link href='/shop'>Shop</Link></li>
+        <li onClick={linkClose} ><Link href='/shop'>Shop</Link></li>
         <li onClick={linkClose}><Link href='/news'>News</Link></li>
         <li onClick={linkClose}><Link href='/about'>About</Link></li>
         <li onClick={linkClose}><Link href='/contact'>Contact</Link></li>

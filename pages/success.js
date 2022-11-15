@@ -34,7 +34,7 @@ const Success = () => {
                 </div>
                 <p className='questions'> If you have any questions. Please email <span>orders@fruitku.com</span></p>
                 <Link href='/shop'>
-                    <button type='button' className='continue-shopping-button'  > Continue Shopping</button>
+                    <button type='button' className='success-continue-shopping-button'  > Continue Shopping</button>
                 </Link>
             </div>
         </div>

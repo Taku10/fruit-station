@@ -5,6 +5,8 @@ import { Product } from '../components';
 import { Context } from '../context/StateContext';
 import ReactPaginate from 'react-paginate';
 import { motion, useScroll } from 'framer-motion';
+import { useRouter } from 'next/router';
+import Link  from 'next/link';
 
 
 
@@ -16,6 +18,7 @@ const ListProducts = ({ products }) => {
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 9;
 
+  const route = useRouter()
 
   console.log(currentItems)
 
@@ -77,28 +80,28 @@ const ListProducts = ({ products }) => {
       <motion.div style={{ scaleX: scrollYProgress }} />
       <div className='list-products-wrapper'>
         <input type="text" placeholder='Search Fruits' onChange={(e) => setSearch(e.target.value)} />
-        <motion.div layout className='products-show'>
+        <motion.div layout className='products-show' id='pag-top' >
           {currentItems.filter((item) => item.name.toLowerCase().includes(search)).map((item) => (
             <Product key={item._id} products={item} />
           ))}
 
 
         </motion.div>
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel="Next"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="Prev"
-          renderOnZeroPageCount={null}
-          containerClassName='pagination'
-          pageLinkClassName='page-num'
-          previousLinkClassName='page-num'
-          nextLinkClassName='page-num'
-          activeLinkClassName='active'
-
-        />
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel="Next"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={5}
+            pageCount={pageCount}
+            previousLabel="Prev"
+            renderOnZeroPageCount={null}
+            containerClassName='pagination'
+            pageLinkClassName='page-num'
+            previousLinkClassName='page-num'
+            nextLinkClassName='page-num'
+            activeLinkClassName='active'
+            onClick={()=>route.push('/shop')}
+          />
       </div>
 
     </div>
