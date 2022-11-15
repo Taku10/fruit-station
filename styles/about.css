@@ -1,194 +1,274 @@
 :root {
-    ---open: "Open Sans", sans-serif;
-    ---poppins: Poppins, sans-serif;
-    ---main_color: #f28123;
-    ---sec_color: #051922
-  }
+  ---open: "Open Sans", sans-serif;
+  ---poppins: Poppins, sans-serif;
+  ---main_color: #f28123;
+  ---sec_color: #051922
+}
 
-  .about-container{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.about-container{
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .about-start-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 57vh;
-    border: 1px solid;
-    background-color:var(---head_color);
-    background-attachment: fixed;
-    align-items: center;
-    justify-content: center;
-    margin-bottom:4rem;
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 57vh;
+  background-color:var(---head_color);
+  background-attachment: fixed;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom:4rem;
+}
 
-  .about-start-header{
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    gap:2rem;
-    margin-top: 4rem;
-  }
+.about-start-header{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap:2rem;
+  margin-top: 4rem;
+}
 
-  .about-start-header p{
-    font-family: var(---open);
-    font-weight: 700;
-    font-size:14px;
-    color: var(---main_color);
-    letter-spacing: .5rem;
-  }
+.about-start-header p{
+  font-family: var(---open);
+  font-weight: 700;
+  font-size:14px;
+  color: var(---main_color);
+  letter-spacing: .5rem;
+}
 
-  .about-start-header h1{
-    font-family: var(---poppins);
-    font-weight: 900;
-    font-size:50px;
-    color: #ffffff;
+.about-start-header h1{
+  font-family: var(---poppins);
+  font-weight: 900;
+  font-size:50px;
+  color: #ffffff;
 
-  }
-
-
-  .about-wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100%;
-    width: 80%;
-    gap:5rem;
-    margin-bottom: 4rem;
-    margin-top: 4rem;
-  }
-
-  .about-benefits-wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap:3rem;
-  }
-
-  .about-grid-left{
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
-  }
-
-  .about-grid-left h1{
-    font-size:42px;
-    color: var(---sec_color);
-    font-weight: 700;
-    font-family: var(---poppins)
-  }
-
-  .orange-text{
-    color: var(---main_color);
-  }
+}
 
 
-  .about-benefit{
-    display: flex;
-    align-items: center;
-    gap:1rem;
-  }
+.about-wrapper{
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5rem 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  width: 80%;
+  gap:5rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
 
-  .about-benefits-desc{
-    display: flex;
-    flex-direction: column;
-    gap:.5rem;
-  }
+.about-benefits-wrapper{
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3rem 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 3rem 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap:3rem;
+}
 
-  .about-benefits-desc h2{
-    font-family: var(---poppins);
-    font-size: 18px;
-    color:var(---sec_color);
-    font-weight: 700;
-  }
+.about-benefits-wrapper > *:nth-child(1){
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
 
- 
+.about-benefits-wrapper > *:nth-child(2){
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
 
-  .about-benefits-desc p{
-    font-family: var(---open);
-    font-size: 14px;
-    color: #8f989c;
-    font-weight: 400;
-  }
+.about-benefits-wrapper > *:nth-child(3){
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
 
-  .about-benefit-icon{
-    border: 2px dotted var(---main_color);
-    height: 3rem;
-    width: 9rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius:50% ;
-  }
+.about-benefits-wrapper > *:nth-child(4){
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
 
-  .about-icon{
-    font-size: 30px;
-    color: var(---main_color);
-  }
+.about-grid-left{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap:1rem;
+}
 
-  .about-grid-right{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('../images/fruit-basket.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top-right-radius:1rem ;
-    border-bottom-left-radius:1rem ;
+.about-grid-left h1{
+  font-size:42px;
+  color: var(---sec_color);
+  font-weight: 700;
+  font-family: var(---poppins)
+}
+
+.orange-text{
+  color: var(---main_color);
+}
+
+
+.about-benefit{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap:1rem;
+}
+
+.about-benefits-desc{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap:.5rem;
+}
+
+.about-benefits-desc h2{
+  font-family: var(---poppins);
+  font-size: 18px;
+  color:var(---sec_color);
+  font-weight: 700;
+}
+
+
+
+.about-benefits-desc p{
+  font-family: var(---open);
+  font-size: 14px;
+  color: #8f989c;
+  font-weight: 400;
+}
+
+.about-benefit-icon{
+  border: 2px dotted var(---main_color);
+  height: 3rem;
+  width: 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius:50% ;
+}
+
+.about-icon{
+  font-size: 30px;
+  color: var(---main_color);
+}
+
+.about-grid-right{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url('../images/fruit-basket.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-right-radius:1rem ;
+  border-bottom-left-radius:1rem ;
 }
 
 @media (max-width:992px) {
 
-  
 
-  .about-wrapper{
-    display: flex;
-  }
 
-  .about-grid-right{
-    display: none;
-  }
+.about-wrapper{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-grid-right{
+  display: none;
+}
 
 
 }
 
 @media (max-width:768px) {
-  
-  
-  .about-start-header p{
-    font-size: 12px;
+
+
+.about-start-header p{
+  font-size: 12px;
 }
 
 .about-start-header h1{
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .about-grid-left h1{
-  font-size: 35px;
+font-size: 35px;
 }
 
 .about-benefit-icon{
-  width: 5rem;
-  height: 4rem;
+width: 5rem;
+height: 4rem;
 }
 
 .about-benefits-wrapper{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+    -ms-flex-direction: column;
+        flex-direction: column;
+width: 100%;
 }
 }
 
 @media (max-width:500px) {
-  
-  .about-benefit-icon{
-    height: 3rem;
-  }
 
-  .about-grid-left h1{
-    font-size: 30px;
-  }
+.about-benefit-icon{
+  height: 3rem;
+}
+
+.about-grid-left h1{
+  font-size: 30px;
+}
 }
