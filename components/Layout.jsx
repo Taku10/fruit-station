@@ -19,6 +19,7 @@ const Layout = ({ children, products}) => {
 
 if (router.pathname.includes('/login')) return children;
 if (router.pathname.includes('/success')) return children;
+if (router.pathname.includes('/cancelled')) return children;
 
   return (
 
