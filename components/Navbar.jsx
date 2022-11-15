@@ -22,9 +22,11 @@ import { toast } from 'react-hot-toast'
 const Navbar = ({ logo }) => {
   const [user, loading] = useAuthState(auth);
   const [nav, setNav] = useState(false)
+  const[navFocus, setNavFocus]=useState(false);
   const useStateContext = useContext(Context)
   const { showCart, setShowCart, totalQuantities, cartItems, showSearch, setShowSearch, menu, setMenu } = useStateContext;
   const route = useRouter()
+  
   //navbar background color change on scroll
   useEffect(() => {
     const changeNav = () => {
@@ -79,11 +81,11 @@ const Navbar = ({ logo }) => {
       </ul>
 
       {menu && <ul className='nav-items-mobile'>
-        <li onClick={linkClose}><Link href='/' >Home</Link></li>
-        <li onClick={linkClose} ><Link href='/shop'>Shop</Link></li>
-        <li onClick={linkClose}><Link href='/news'>News</Link></li>
-        <li onClick={linkClose}><Link href='/about'>About</Link></li>
-        <li onClick={linkClose}><Link href='/contact'>Contact</Link></li>
+        <li onClick={linkClose}><Link  href='/' >Home</Link></li>
+        <li onClick={linkClose}><Link  href='/shop'>Shop</Link></li>
+        <li onClick={linkClose}><Link  href='/news'>News</Link></li>
+        <li onClick={linkClose}><Link  href='/about'>About</Link></li>
+        <li onClick={linkClose}><Link  href='/contact'>Contact</Link></li>
       </ul>
       }
       <div className='cart-search-nav'>
