@@ -127,11 +127,18 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
- width: 100%;
 gap:1rem;
+border: 1px solid;
 
 
 
+}
+
+.input-wrapper{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+  width: 100%;
 }
 
 .contact-form input{

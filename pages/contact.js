@@ -43,16 +43,28 @@ const Contact = () => {
           </p>
           <form className='contact-form' onSubmit={handleSubmit(onSubmit)}>
             <div className='contact-fullName'>
-              <input {...register("name", { required: true, maxLength: 20 })} />
-              {errors.name?.type === 'required' && <p role="alert" className='input-errors'>Name is required!</p>}
-              <input type='email' {...register("email", { required: true, maxLength: 30 })} />
-              {errors.email?.type === 'required' && <p role="alert" className='input-errors'>Email is required!</p>}
+              <div className='input-wrapper'>
+                <label> Name:</label>
+                <input {...register("name", { required: true, maxLength: 20 })} />
+                {errors.name?.type === 'required' && <p role="alert" className='input-errors'>Name is required!</p>}
+              </div>
+              <div className='input-wrapper'>
+                <label> Email:</label>
+                <input type='email' {...register("email", { required: true, maxLength: 30 })} />
+                {errors.email?.type === 'required' && <p role="alert" className='input-errors'>Email is required!</p>}
+              </div>
             </div>
             <div className='contact-phone-subject'>
-              <input   {...register("phone", { required: true, maxLength: 10 })} />
-              {errors.phone?.type === 'required' && <p role="alert" className='input-errors'>Phone number is required!</p>}
-              <input  {...register("subject", { required: true, maxLength: 50 })}/>
-              {errors.subject?.type === 'required' && <p role="alert" className='input-errors'>Subject is required!</p>}
+              <div className='input-wrapper'>
+                <label>Phone:</label>
+                <input   {...register("phone", { required: true, maxLength: 10 })} />
+                {errors.phone?.type === 'required' && <p role="alert" className='input-errors'>Phone number is required!</p>}
+              </div>
+              <div className='input-wrapper'>
+                <label>Subject:</label>
+                <input  {...register("subject", { required: true, maxLength: 50 })} />
+                {errors.subject?.type === 'required' && <p role="alert" className='input-errors'>Subject is required!</p>}
+              </div>
             </div>
             <textarea cols="30" rows="10" placeholder='Message'{...register("message", { required: true, maxLength: 200 })}></textarea>
             {errors.message?.type === 'required' && <p role="alert" className='input-errors'>Message is required!</p>}
