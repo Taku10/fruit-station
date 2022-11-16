@@ -66,8 +66,12 @@ const Contact = () => {
                 {errors.subject?.type === 'required' && <p role="alert" className='input-errors'>Subject is required!</p>}
               </div>
             </div>
-            <textarea cols="30" rows="10" placeholder='Message'{...register("message", { required: true, maxLength: 200 })}></textarea>
-            {errors.message?.type === 'required' && <p role="alert" className='input-errors'>Message is required!</p>}
+            <div className='input-wrapper-textarea'>
+              <label>Message</label>
+              <textarea cols="30" rows="10" placeholder='Message'{...register("message", { required: true, maxLength: 200 })}></textarea>
+              {errors.message?.type === 'required' && <p role="alert" className='input-errors'>Message is required!</p>}
+            </div>
+
             <button className='contact-submit' type='submit'>Submit</button>
 
           </form>
