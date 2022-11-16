@@ -10,6 +10,9 @@
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-wrapper{
@@ -19,6 +22,7 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
+  border: 1px solid;
 
 }
 
@@ -29,6 +33,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  
 }
 
 .login-right{
@@ -226,4 +231,26 @@ font-size: 0.8rem;
 .google-icon, .facebook-icon{
 font-size: 1rem;
 }
+}
+
+.login-wrapper{
+  justify-content: center;
+}
+
+@media (max-width:768px) {
+
+.login-wrapper{
+  display: flex;
+}
+
+  .login-left{
+    display: none;
+  }
+
+
+
+  .login-right{
+    justify-content: center;
+    width: 100%;
+  }
 }

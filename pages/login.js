@@ -47,7 +47,7 @@ const Login = () => {
     } catch (error) {
       console.log(error.code)
       if (error.code === 'auth/account-exists-with-different-credential') {
-        toast.error(<p className='email-login-error'>Email exists with Google Account</p>, { position: "bottom-right" })
+        toast.error(<p className='email-login-error'>Email exists with Google Account</p>, { position: "bottom-center" })
       } if (error.code === 'auth/user-disabled') {
         toast.error(<p className='email-login-error'>Your account is banned</p>, { position: "top" })
       } else {
