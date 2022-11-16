@@ -42,6 +42,7 @@ const Contact = () => {
         })
     });
     console.log(e)
+    e.target.reset();
   }
 
 
