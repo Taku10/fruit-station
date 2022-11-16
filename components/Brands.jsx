@@ -7,7 +7,7 @@ import { brand_data } from '../images/brandData';
 const Brands = () => {
   return (
     <div className='brands-container'>
-         <Slider className='brand-slide desktop-brand' arrows={false}  slidesToShow={4}  autoplay={true} autoplaySpeed={3000}>
+         <Slider className='brand-slide desktop-brand' touchMove={true} easing="linear" arrows={false}  slidesToShow={4}  autoplay={true} autoplaySpeed={3000}>
 
             {brand_data.map((item, index)=>(
                 <div  className='brand' >
