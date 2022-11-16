@@ -29,7 +29,8 @@ const Contact = () => {
         console.log(result.text);
         Swal.fire({
           title:'Email Sent',
-          icon: 'success'
+          icon: 'success',
+          confirmButtonColor: '#f28123'
     })
     }, (error) => {
         console.log(error.text);
@@ -37,6 +38,7 @@ const Contact = () => {
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
+          confirmButtonColor: '#f28123'
         })
     });
     console.log(e)

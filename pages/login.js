@@ -31,11 +31,13 @@ const Login = () => {
           icon: 'warning',
           title: 'Oops...',
           text: 'Email already exists with Facebook Account!',
+          confirmButtonColor: '#f28123'
         })
       } if (error.code === 'auth/user-disabled') {
         Swal.fire({
           icon: 'warning',
           title: 'Your account is banned!',
+          confirmButtonColor: '#f28123'
         })
       } else {
         console.log('success')
@@ -54,9 +56,18 @@ const Login = () => {
     } catch (error) {
       console.log(error.code)
       if (error.code === 'auth/account-exists-with-different-credential') {
-        toast.error(<p className='email-login-error'>Email exists with Google Account</p>, { position: "bottom-center" })
+        Swal.fire({
+          icon: 'warning',
+          title: 'Oops...',
+          text: 'Email already exists with Google Account!',
+          confirmButtonColor: '#f28123'
+        })
       } if (error.code === 'auth/user-disabled') {
-        toast.error(<p className='email-login-error'>Your account is banned</p>, { position: "top" })
+        Swal.fire({
+          icon: 'warning',
+          title: 'Your account is banned!',
+          confirmButtonColor: '#f28123'
+        })
       } else {
         console.log('success')
       }
