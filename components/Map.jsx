@@ -2,6 +2,7 @@ import React from 'react'
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 import {HiLocationMarker} from 'react-icons/hi'
+import {FaMapMarkerAlt} from 'react-icons/fa'
 
 
 
@@ -19,7 +20,10 @@ const Map = () => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[-33.9248685, 18.424055299999964]}>
+                <Marker position={[-33.9248685, 18.424055299999964]}  icon={L.divIcon({
+    
+            className: "my-marker",
+            html: '📍',})}>
                     <Popup>
                         We ar here
                     </Popup>

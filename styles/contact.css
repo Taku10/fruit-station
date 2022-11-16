@@ -299,6 +299,11 @@ input:focus {
 
 }
 
+.my-marker{
+  font-size: 3rem;
+
+}
+
 .location-wrapper h1 {
   font-family: var(---open);
   font-weight: 600;
