@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { HiLocationMarker } from 'react-icons/hi'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { AiFillContacts } from 'react-icons/ai'
@@ -6,13 +6,41 @@ import Map from '../components/index'
 import Aos from 'aos'
 import { toast } from 'react-hot-toast'
 import { useForm } from "react-hook-form";
-
+import emailjs from '@emailjs/browser'
+import Swal from 'sweetalert2'
 
 
 const Contact = () => {
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+
+  const service_id = process.env.EMAIL_SERVICE_ID
+  const template_id = process.env.EMAIL_TEMPLATE_ID
+  const public_key = process.env.EMAIL_PUBLIC_KEY 
+
+
+  const form = useRef();
+
+
+  const onSubmit =(e)=>{
+   
+    emailjs.sendForm( "service_anuxd9l" ,"template_pwfyf6e" , form.current, "JiFf4tbvQU-Ap-lAM")
+    .then((result) => {
+        console.log(result.text);
+        Swal.fire({
+          title:'Email Sent',
+          icon: 'success'
+    })
+    }, (error) => {
+        console.log(error.text);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        })
+    });
+    console.log(e)
+  }
 
 
 
@@ -41,7 +69,7 @@ const Contact = () => {
           <p className='contact-desc'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!
           </p>
-          <form className='contact-form' onSubmit={handleSubmit(onSubmit)}>
+          <form className='contact-form' ref={form} onSubmit={handleSubmit(onSubmit)}>
             <div className='contact-fullName'>
               <div className='input-wrapper'>
                 <label> Name:</label>

@@ -8,6 +8,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { useRouter } from 'next/router'
 import { toast } from 'react-hot-toast'
 import { async } from '@firebase/util'
+import Swal from 'sweetalert2'
 
 
 const Login = () => {
@@ -26,10 +27,16 @@ const Login = () => {
     } catch (error) {
       console.log(error.code)
       if (error.code === 'auth/account-exists-with-different-credential') {
-        toast.error(<p className='email-login-error'>Email already exists with Facebook Account</p>, { position: "bottom-right" })
-
+        Swal.fire({
+          icon: 'warning',
+          title: 'Oops...',
+          text: 'Email already exists with Facebook Account!',
+        })
       } if (error.code === 'auth/user-disabled') {
-        toast.error(<p className='email-login-error'>Your account is banned</p>, { position: "top" })
+        Swal.fire({
+          icon: 'warning',
+          title: 'Your account is banned!',
+        })
       } else {
         console.log('success')
       }
