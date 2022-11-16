@@ -2,6 +2,8 @@ import React from 'react'
 import { GiCancel } from 'react-icons/gi'
 import Link from 'next/link'
 
+//placeholder not working?
+
 const Cancel = () => {
   return (
     <div className='cancel-container'>

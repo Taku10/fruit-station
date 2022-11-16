@@ -627,6 +627,13 @@ main {
           transform: scale(1.1);
 }
 
+.email-login-error{
+  font-family: var(---open);
+  color: black;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 
 @media (max-width:1300px) {
 

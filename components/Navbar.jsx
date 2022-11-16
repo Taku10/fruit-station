@@ -73,7 +73,7 @@ const Navbar = ({ logo }) => {
 
       </Link>
       <ul className='nav-items'>
-        <li><Link href='/'>Home</Link></li>
+        <li><Link href='/' >Home</Link></li>
         <li><Link href='/shop'>Shop</Link></li>
         <li><Link href='/news'>News</Link></li>
         <li><Link href='/about'>About</Link></li>

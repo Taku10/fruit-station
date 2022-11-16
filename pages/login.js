@@ -24,20 +24,35 @@ const Login = () => {
         route.push('/')
       }
     } catch (error) {
-      console.log(error)
+      console.log(error.code)
+      if (error.code === 'auth/account-exists-with-different-credential') {
+        toast.error(<p className='email-login-error'>Email already exists with Facebook Account</p>, { position: "bottom-right" })
+
+      } if (error.code === 'auth/user-disabled') {
+        toast.error(<p className='email-login-error'>Your account is banned</p>, { position: "top" })
+      } else {
+        console.log('success')
+      }
     }
   }
 
 
   const fbProvider = new FacebookAuthProvider()
-  const FacebookLogin = async()=>{
-    try{
+  const FacebookLogin = async () => {
+    try {
       const result = await signInWithPopup(auth, fbProvider)
-        route.push('/')
-        console.log(result)
-     
-    }catch(error){
-      console.log(error)
+      route.push('/')
+      console.log(result)
+
+    } catch (error) {
+      console.log(error.code)
+      if (error.code === 'auth/account-exists-with-different-credential') {
+        toast.error(<p className='email-login-error'>Email exists with Google Account</p>, { position: "bottom-right" })
+      } if (error.code === 'auth/user-disabled') {
+        toast.error(<p className='email-login-error'>Your account is banned</p>, { position: "top" })
+      } else {
+        console.log('success')
+      }
     }
   }
 
@@ -48,7 +63,7 @@ const Login = () => {
       <div className='login-wrapper'>
         <div className='login-left'></div>
         <div className='login-right'>
-          <div className='login-logo' onClick={()=> route.push('/')}>
+          <div className='login-logo' onClick={() => route.push('/')}>
             <GiFruitBowl className='login-logo-icon' />
             <h1 className='login-logo-text'>FruitKu</h1>
           </div>
