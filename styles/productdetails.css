@@ -311,11 +311,12 @@
     gap: 1rem;
 }
 
-.social-icons .icon{
+.social-icons .icon {
     cursor: pointer;
     -webkit-transition: .4s ease;
     -o-transition: .4s ease;
     transition: .4s ease;
+    color: var(---sec_color)
 }
 .social-icons .icon:hover {
     color: var(---main_color)

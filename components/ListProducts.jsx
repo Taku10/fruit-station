@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect, useRef } from 'react'
 
 import { client } from '../lib/client'
 import { Product } from '../components';
@@ -19,45 +19,23 @@ const ListProducts = ({ products }) => {
   const itemsPerPage = 9;
 
   const route = useRouter()
+  const productOffset = useRef();
+  
+  useEffect(()=>{
+    console.log(productOffset.current.offsetTop)
+  },[])
+
+
+
 
   console.log(currentItems)
 
   const { scrollYProgress } = useScroll();
 
+  
 
 
-
-  // const filterProduct = (e) => {
-  //   let updated = e.target.value;
-
-  //   if (updated === 'All') {
-  //     setCurrentItems(products)
-  //   } else if (updated === 'Apples') {
-  //     const filtered = products.filter(item => item.category === 'Apples')
-  //     setCurrentItems(filtered)
-  //   }else if (updated === 'Berry') {
-  //     const filtered = products.filter(item => item.category === 'Berry')
-  //     setCurrentItems(filtered)
-  //   } else if (updated === 'Citrus') {
-  //     const filtered = products.filter(item => item.category === 'Citrus')
-  //     setCurrentItems(filtered)
-  //   } else if (updated === 'Tropical') {
-  //     const filtered = products.filter(item => item.category === 'Tropical')
-  //     setCurrentItems(filtered)
-  //   } else if (updated === 'Grapes') {
-  //     const filtered = products.filter(item => item.category === 'Grapes')
-  //     setCurrentItems(filtered)
-  //   }
-  //   else if (updated === 'Stone-Fruit') {
-  //     const filtered = products.filter(item => item.category === 'Stone Fruit')
-  //     setCurrentItems(filtered)
-  //   }
-  // }
-
-
-
-
-
+ 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
@@ -79,7 +57,7 @@ const ListProducts = ({ products }) => {
     <div className='list-products-container'>
       <motion.div style={{ scaleX: scrollYProgress }} />
       <div className='list-products-wrapper'>
-        <input type="text" placeholder='Search Fruits' onChange={(e) => setSearch(e.target.value)} />
+        <input type="text" placeholder='Search Fruits' onChange={(e) => setSearch(e.target.value)} ref={productOffset} />
         <motion.div layout className='products-show' id='pag-top' >
           {currentItems.filter((item) => item.name.toLowerCase().includes(search)).map((item) => (
             <Product key={item._id} products={item} />
@@ -100,7 +78,7 @@ const ListProducts = ({ products }) => {
             previousLinkClassName='page-num'
             nextLinkClassName='page-num'
             activeLinkClassName='active'
-            onClick={()=>route.push('/shop')}
+            onClick={()=> window.scrollTo({top:productOffset.current.offsetTop,left: 0, behavior: 'smooth'})}
           />
       </div>
 
